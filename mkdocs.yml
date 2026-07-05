@@ -1,6 +1,46 @@
-site_name: AnCloud's Notebook
+site_name: A.Cloud's Notebook
+site_url: https://st-anontokyo.github.io/notebook/
 nav:
-  - Home: index.md
+  - 主页: index.md
+  - 系统:
+    - system/index.md
+    - hpc短学期:
+      - system/hpc/index.md
+extra_css:
+  - style/style.css
+
 theme:
   name: material
   favicon: img/favicon.ico
+  logo: img/favicon.png
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: teal
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: 切换夜间模式
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: teal
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: 切换日间模式
+
+  font:
+    text: Noto Serif SC
+    code: Roboto Mono
