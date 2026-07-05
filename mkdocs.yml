@@ -1,5 +1,6 @@
-site_name: ACloud's Notebook
+site_name: AnCloud's Notebook
 nav:
   - Home: index.md
 theme:
   name: material
+  favicon: img/favicon.ico
