@@ -28,6 +28,9 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+plugins:
+  - tags
+
 theme:
   name: material
   favicon: img/favicon.ico
