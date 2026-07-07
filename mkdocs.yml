@@ -1,5 +1,7 @@
 site_name: A.Cloud's Notebook
 site_url: https://st-anontokyo.github.io/notebook/
+repo_url: https://github.com/St-AnonTokyo/notebook
+repo_name: "st-anontokyo/notebook"
 nav:
   - 主页: index.md
   - 系统:
@@ -7,6 +9,14 @@ nav:
     - hpc短学期:
       - system/hpc/index.md
       - 超算概述: system/hpc/1.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/St-AnonTokyo
+
+copyright: "&copy; 2026 AnchoraCloud"
+
 extra_css:
   - style/style.css
 
@@ -48,6 +58,7 @@ theme:
     - navigation.top
     - content.code.copy
     - content.code.select
+    - navigation.footer
   palette:
     # Palette toggle for light mode
     - scheme: default
@@ -70,6 +81,7 @@ theme:
     code: Roboto Mono
 
   icon:
+    repo: fontawesome/brands/github-square
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
