@@ -9,6 +9,10 @@ nav:
     - hpc短学期:
       - system/hpc/index.md
       - 超算概述: system/hpc/1.md
+  - 计算机视觉:
+    - cv/index.md
+    - 3维高斯泼溅:
+      - cv/3dgs/index.md
 
 extra:
   social:
@@ -58,6 +62,7 @@ theme:
     - navigation.top
     - content.code.copy
     - content.code.select
+    - content.code.annotate
     - navigation.footer
   palette:
     # Palette toggle for light mode
@@ -81,7 +86,7 @@ theme:
     code: Roboto Mono
 
   icon:
-    repo: fontawesome/brands/github-square
+    repo: fontawesome/brands/git-alt
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
