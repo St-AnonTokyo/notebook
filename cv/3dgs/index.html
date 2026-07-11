@@ -932,7 +932,7 @@
 <summary>基本原理</summary>
 <p><em>"All these methods re-project and blend the input images into the novel view camera, and use the
 geometry to guide this re-projection."</em></p>
-<p><img alt="流程图" src="img/photogrametry.jpg" title="SFM流程图" /></p>
+<p><img alt="流程图" src="img/photogrametry.webp" title="SFM流程图" /></p>
 <ul>
 <li><strong>Input：</strong><a href="https://blog.csdn.net/gwplovekimi/article/details/90172544" title="清楚简明的介绍">Intrinsic Matrix</a>（3×3的内参矩阵K）用来描述单个相机拍摄图片的过程，即现实世界的点如何投影到2D平面上（三维点坐标到二维点坐标的映射关系），Image Frames是一组从不同位置、角度拍摄采集的照片样本。  </li>
 <li><strong>Feature Extraction：</strong>系统在每张图片中找容易被重复识别的特征点（如边角处、边缘处、纹理较明显的位置等），即图中绿色点。(feature points)</li>
@@ -1065,6 +1065,8 @@ when MVS generates inexistent geometry."</em></p>
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/prefetch-images.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

@@ -1241,7 +1241,7 @@
 <h3 id="ascendai">昇腾(Ascend)AI处理器</h3>
 <details class="note" open="open">
 <summary>处理器芯片的逻辑架构</summary>
-<p><img alt="芯片" src="../img/3-AI%E5%A4%84%E7%90%86%E5%99%A8.png" title="逻辑架构" /></p>
+<p><img alt="芯片" src="../img/3-AI%E5%A4%84%E7%90%86%E5%99%A8.webp" title="逻辑架构" /></p>
 <ul>
 <li>芯片系统控制处理器（Control CPU）</li>
 <li>面向计算密集型任务的AI计算核心（AI core）</li>
@@ -1270,21 +1270,21 @@
 <p>👉它的周围配备了多个<strong>通用寄存器</strong>（用于寄存变量/地址，为算术逻辑计算提供源操作数和中间计算结果）和<strong>专用寄存器</strong>（用来支持指令集中一些指令的特殊功能，一般不可以直接访问）。</p>
 <p><strong>向量计算单元</strong></p>
 <p>负责完成向量相关的计算。</p>
-<p><img alt="向量运算" src="../img/3-vector_unit.png" title="向量运算" /></p>
+<p><img alt="向量运算" src="../img/3-vector_unit.webp" title="向量运算" /></p>
 <p><strong>矩阵计算单元</strong></p>
 <p>负责完成矩阵相关的计算。</p>
 <details class="example" open="open">
 <summary>矩阵乘法</summary>
-<p><img alt="矩阵乘法" src="../img/3-matrix_product.png" title="分块矩阵乘法" /></p>
+<p><img alt="矩阵乘法" src="../img/3-matrix_product.webp" title="分块矩阵乘法" /></p>
 <p>💡分块后就可以并行计算多个块矩阵的乘法，最后统一结果即可。</p>
 </details>
 <h4 id="_4">存储系统</h4>
 <details class="tip" open="open">
 <summary>数据存储格式</summary>
 <p><strong>ND格式：</strong>每个张量（在这里相当于分分块矩阵）中的数据按从左到右、从上到下顺序存储在内存中。</p>
-<p><img alt="ND格式" src="../img/3-ND.png" title="ND格式" /></p>
+<p><img alt="ND格式" src="../img/3-ND.webp" title="ND格式" /></p>
 <p><strong>NZ格式：</strong>每个张量中的数据按照“Z字型”遍历存储。</p>
-<p><img alt="NZ格式" src="../img/3-NZ.png" title="NZ格式" /></p>
+<p><img alt="NZ格式" src="../img/3-NZ.webp" title="NZ格式" /></p>
 </details>
 <p>存储系统由存储单元和相应数据通路构成。</p>
 <p><strong>存储单元</strong></p>
@@ -1296,7 +1296,7 @@
 <li>寄存器：主要是标量计算单元在使用。</li>
 <li>数据搬运单元：负责板上数据搬运以及与主线进行数据交换。</li>
 </ul>
-<p><img alt="存储系统" src="../img/3-storage_system.png" title="存储系统" /></p>
+<p><img alt="存储系统" src="../img/3-storage_system.webp" title="存储系统" /></p>
 <h4 id="_5">控制单元</h4>
 <p>由系统控制模块、指令缓存模块、标量控制模块、指令队列模块和事件同步模块组成。</p>
 <ul>
@@ -1306,12 +1306,12 @@
 <li>指令队列模块：由矩阵/向量/标量/存储转换（管理不同存储层级间的数据搬运）指令队列构成。不同指令进入相应计算队列顺序执行。</li>
 <li>事件同步模块：时刻控制每条指令流水线的执行状态，并分析不同流水线间的依赖关系。</li>
 </ul>
-<p><img alt="指令" src="../img/3-instruction_queue.png" title="指令和控制系统" /></p>
+<p><img alt="指令" src="../img/3-instruction_queue.webp" title="指令和控制系统" /></p>
 <h3 id="cann">CANN系统架构</h3>
 <p>专门为高性能深度神经网络计算需求所设计和优化的一套架构。对上承接各种AI框架，对下服务AI芯片与编程。</p>
 <details class="abstract" open="open">
 <summary>CANN系统架构</summary>
-<p><img alt="系统" src="../img/3-cann.png" title="系统架构图" /></p>
+<p><img alt="系统" src="../img/3-cann.webp" title="系统架构图" /></p>
 <ul>
 <li>昇腾计算语言：提供了一套API，用来管理和使用昇腾软硬件的计算资源。有算子开发语言Ascend C，图开发和应用开发的API接口。</li>
 <li>昇腾计算服务层：提供了算子和模型的开发调优工具、AI算子库、AI框架适配、系统管理工具等应用层能力。</li>
@@ -1341,14 +1341,14 @@
 </div>
 <details class="abstract">
 <summary>费林分类法</summary>
-<p><img alt="费林分类法" src="../img/3-feilin.png" title="费林分类法" /></p>
+<p><img alt="费林分类法" src="../img/3-feilin.webp" title="费林分类法" /></p>
 </details>
 <h4 id="_8">大模型并行加速的基本原理</h4>
 <ul>
 <li>数据并行：将大规模的数据集划分为多个批次，分配给不同计算节点处理。</li>
 <li>模型并行：将模型的不同部分（如不同的层/网络）分布到不同的计算节点上。（各个节点负责一部分计算，可能需要频繁的跨节点通信）</li>
 </ul>
-<p><img alt="大模型并行" src="../img/3-ai_parallel.png" title="大模型并行" /></p>
+<p><img alt="大模型并行" src="../img/3-ai_parallel.webp" title="大模型并行" /></p>
 <h3 id="ascend-c_1">Ascend C 开发</h3>
 
 
@@ -1473,6 +1473,8 @@
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../javascripts/prefetch-images.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
