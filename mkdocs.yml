@@ -9,6 +9,8 @@ nav:
     - hpc短学期:
       - system/hpc/index.md
       - 超算概述: system/hpc/1.md
+      - 向量化并行计算基础: system/hpc/2.md
+      - 华为昇腾异构并行程序设计: system/hpc/3.md
   - 计算机视觉:
     - cv/index.md
     - 3维高斯泼溅:

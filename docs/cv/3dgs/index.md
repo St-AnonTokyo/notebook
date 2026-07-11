@@ -23,8 +23,8 @@
 这是最早用来解决这个问题的方法。
 
 ???+ note "基本原理"
-    *All these methods re-project and blend the input images into the novel view camera, and use the
-    geometry to guide this re-projection.*
+    *"All these methods re-project and blend the input images into the novel view camera, and use the
+    geometry to guide this re-projection."*
 
     ![流程图](img/photogrametry.jpg "SFM流程图")
 
@@ -50,8 +50,8 @@
 
 **性能**
 
-*These methods produced excellent results in many cases, but typically cannot completely recover from unreconstructed regions, or from “over-reconstruction”,
-when MVS generates inexistent geometry.*
+*"These methods produced excellent results in many cases, but typically cannot completely recover from unreconstructed regions, or from “over-reconstruction”,
+when MVS generates inexistent geometry."*
 
 ### Neural Rendering and Radiance Fields（NeRF）
 

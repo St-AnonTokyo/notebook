@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://st-anontokyo.github.io/notebook/system/hpc/">
+        <link rel="canonical" href="https://st-anontokyo.github.io/notebook/system/hpc/2/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../1/">
       
       
-        <link rel="next" href="1/">
+        <link rel="next" href="../3/">
       
       
         
       
       
-      <link rel="icon" href="../../img/favicon.ico">
+      <link rel="icon" href="../../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>超算短学期(HPC101) - A.Cloud's Notebook</title>
+        <title>向量化并行计算基础 - A.Cloud's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -116,9 +116,9 @@
       
     
     
-      <link rel="stylesheet" href="../../style/style.css">
+      <link rel="stylesheet" href="../../../style/style.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -143,7 +143,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hpc101" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -159,9 +159,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="A.Cloud&#39;s Notebook" class="md-header__button md-logo" aria-label="A.Cloud's Notebook" data-md-component="logo">
+    <a href="../../.." title="A.Cloud&#39;s Notebook" class="md-header__button md-logo" aria-label="A.Cloud's Notebook" data-md-component="logo">
       
-  <img src="../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -178,7 +178,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              超算短学期(HPC101)
+              向量化并行计算基础
             
           </span>
         </div>
@@ -243,7 +243,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -266,7 +266,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -288,7 +288,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../cv/" class="md-tabs__link">
+        <a href="../../../cv/" class="md-tabs__link">
           
   
   
@@ -330,9 +330,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="A.Cloud&#39;s Notebook" class="md-nav__button md-logo" aria-label="A.Cloud's Notebook" data-md-component="logo">
+    <a href="../../.." title="A.Cloud&#39;s Notebook" class="md-nav__button md-logo" aria-label="A.Cloud's Notebook" data-md-component="logo">
       
-  <img src="../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.png" alt="logo">
 
     </a>
     A.Cloud's Notebook
@@ -359,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -414,7 +414,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -487,7 +487,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -505,7 +505,7 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1/" class="md-nav__link">
+      <a href="../1/" class="md-nav__link">
         
   
   
@@ -556,10 +556,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    向量化并行计算基础
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -575,6 +602,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        向量化
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NumPy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIMD 向量化
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -587,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="3/" class="md-nav__link">
+      <a href="../3/" class="md-nav__link">
         
   
   
@@ -653,7 +733,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../cv/" class="md-nav__link ">
+            <a href="../../../cv/" class="md-nav__link ">
               
   
   
@@ -718,7 +798,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../cv/3dgs/" class="md-nav__link ">
+            <a href="../../../cv/3dgs/" class="md-nav__link ">
               
   
   
@@ -785,6 +865,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        向量化
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NumPy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIMD 向量化
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -808,7 +929,7 @@
   
   
     <li class="md-path__item">
-      <a href="../.." class="md-path__link">
+      <a href="../../.." class="md-path__link">
         
   <span class="md-ellipsis">
     主页
@@ -826,7 +947,7 @@
     
     
       <li class="md-path__item">
-        <a href="../" class="md-path__link">
+        <a href="../../" class="md-path__link">
           
   <span class="md-ellipsis">
     系统
@@ -844,7 +965,7 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
     hpc短学期
@@ -869,8 +990,78 @@
   
 
 
-<h1 id="hpc101">超算短学期(HPC101)</h1>
-<p>一门在大一暑假开设的短学期课程。</p>
+<h1 id="_1">向量化并行计算基础</h1>
+<p>💡向量化计算就是把一批数据当作一个整体同时运算，而不是一个一个依次处理。</p>
+<p><strong>概念引入</strong></p>
+<ul>
+<li>标量(scalar)： 单个数据值。如：一个整数、一个浮点数。</li>
+<li>向量(vector)：一组同类型的数据，如：一串整数、一串浮点数。</li>
+</ul>
+<details class="note" open="open">
+<summary>两种处理方式</summary>
+<p><strong>标量计算：</strong></p>
+<ul>
+<li>a = 3</li>
+<li>b = 10</li>
+<li>a + b = 13</li>
+</ul>
+<p>👉一次计算只处理一个元素。（串行）</p>
+<p><strong>向量计算：</strong> </p>
+<ul>
+<li>A = [1, 2, 3, 4]</li>
+<li>B = [10, 20, 30, 40]</li>
+<li>A + B = [11, 22, 33, 44]</li>
+</ul>
+<p>👉这里是把整组数据交给向量处理单元，让它们<strong>同时</strong>处理多个元素。（并行）</p>
+</details>
+<h2 id="_2">向量化</h2>
+<p><strong>核心思想：</strong>一次同时参与运算的不是一个值，而是多个值一起算，即一个向量。通过将一些串行的程序向量化，我们可以优化它的性能。</p>
+<details class="example" open="open">
+<summary>矩阵加法</summary>
+<p><img alt="矩阵加法" src="../img/2-matrix_add.png" title="原始的矩阵加法代码" /></p>
+<p>👉大量使用for循环，一次只能执行一条，造成极大浪费。</p>
+<p>💡<strong>优化思路：</strong>矩阵相加的过程中，一个位置的运算和其它位置都没有关系（无依赖关系），只和原来两个矩阵相应的坐标值有关。所以矩阵加法可以并行完成。</p>
+</details>
+<details class="example" open="open">
+<summary>矩阵乘法</summary>
+<p><img alt="矩阵乘法" src="../img/2-matrix_prod.png" title="原始的矩阵乘法代码" /></p>
+<p>👉实际有三重for循环，因为行列数已知所以最里面的for被展开了。</p>
+<p>💡<strong>优化思路：</strong>从 <span class="arithmatex">\(A \times B = C\)</span> 入手，C矩阵中的每一个值<span class="arithmatex">\(C_{i,j}\)</span>都是由A矩阵和B矩阵的两个一维的向量相乘得到的(行向量A_i和列向量B_j)，在计算时是不相干的，并且读取过程中输入不会被改动，因此可以并行处理。</p>
+</details>
+<h2 id="numpy">NumPy</h2>
+<p>使用python进行科学计算的基础包，一个用来做矩阵运算的库。它提供了数组、矩阵和批量运算接口。我们需要找到那些可以看作向量的部分，把数据转变成能使用向量化接口的样子，从而使用NumPy。</p>
+<p><strong>两个例子：</strong></p>
+<details class="example" open="open">
+<summary>查找子序列</summary>
+<p>👉下面这段代码在序列seq中查找所有子序列sub对应的起始位置：
+<img alt="原始代码" src="../img/2-py_code1.2.png" title="原始代码" /></p>
+<p>👉这是用NumPy优化后的代码：</p>
+<p><img alt="NumPy代码" src="../img/2-py_code1.1.png" title="NumPy代码" /></p>
+<ul>
+<li><strong>点积：</strong>计算sub子序列与自己的点积，存放到target中。</li>
+<li><strong>用点积初筛：</strong>使用np.correlate函数，以sub为窗口长度在seq序列上逐个单位滑动，计算每个窗口与sub的点积（理论上是同时计算的），比较与target是否相同，np.where自动取出值为True的下标，将结果存入candidates。</li>
+<li><strong>得到完整索引：</strong>通过candidates[:, np.newaxis]把candidates从一位数组转置为列向量，而后使用np.arange(len(sub))得到子序列所有下标（每一行代表一个候选序列），索引矩阵存入check。</li>
+<li><strong>与sub逐位比较：</strong>使用np.take取出每行索引对应的子序列，将其与sub对比，axis=-1表示逐行检查。通过np.all将每行对比所得的布尔值and起来，最后将整行的判断结果存入mask。mask是一个布尔数组</li>
+<li><strong>返回结果：</strong>执行candidates[mask]后，NumPy会按照mask中的结果（True/False）依次判断candidates中的起始位置是否正确，返回正确的起始索引数组。</li>
+</ul>
+</details>
+<details class="example" open="open">
+<summary>隐式的矩阵加法</summary>
+<p><img alt="矩阵" src="../img/2-matrix1.png" title="题目" /></p>
+<p>👉可以转换成三个矩阵相加，从而实现并行。</p>
+<p><img alt="解法" src="../img/2-matrix2.png" title="解法" /></p>
+</details>
+<h2 id="simd">SIMD 向量化</h2>
+<p>单指令多数据流（Single Instruction Multiple Data）——CPU发出一条指令，同时处理多个数据。</p>
+<details class="info" open="open">
+<summary>SIMD</summary>
+<p><img alt="SIMD工作" src="../img/2-SIMD.png" title="SIMD工作示意图" /></p>
+<p>👉在x86架构下，SIMD一般和AVX等指令集联系在一起——AVX指令集中提供了大量可以单指令操作多个数据单元的指令。</p>
+</details>
+<details class="example" open="open">
+<summary>实践1</summary>
+<p>待施工······</p>
+</details>
 
 
 
@@ -906,7 +1097,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 系统">
+          <a href="../1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 超算概述">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -916,20 +1107,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                系统
+                超算概述
               </div>
             </div>
           </a>
         
         
           
-          <a href="1/" class="md-footer__link md-footer__link--next" aria-label="下一页: 超算概述">
+          <a href="../3/" class="md-footer__link md-footer__link--next" aria-label="下一页: 华为昇腾异构并行程序设计">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                超算概述
+                华为昇腾异构并行程序设计
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -988,12 +1179,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
