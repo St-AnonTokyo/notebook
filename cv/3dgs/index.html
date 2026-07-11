@@ -459,6 +459,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -526,6 +530,62 @@
     
   
     超算概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/hpc/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    向量化并行计算基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/hpc/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    华为昇腾异构并行程序设计
   
 
     
@@ -870,8 +930,8 @@
 <p>这是最早用来解决这个问题的方法。</p>
 <details class="note" open="open">
 <summary>基本原理</summary>
-<p><em>All these methods re-project and blend the input images into the novel view camera, and use the
-geometry to guide this re-projection.</em></p>
+<p><em>"All these methods re-project and blend the input images into the novel view camera, and use the
+geometry to guide this re-projection."</em></p>
 <p><img alt="流程图" src="img/photogrametry.jpg" title="SFM流程图" /></p>
 <ul>
 <li><strong>Input：</strong><a href="https://blog.csdn.net/gwplovekimi/article/details/90172544" title="清楚简明的介绍">Intrinsic Matrix</a>（3×3的内参矩阵K）用来描述单个相机拍摄图片的过程，即现实世界的点如何投影到2D平面上（三维点坐标到二维点坐标的映射关系），Image Frames是一组从不同位置、角度拍摄采集的照片样本。  </li>
@@ -895,8 +955,8 @@ geometry to guide this re-projection.</em></p>
 </ul>
 <p>👉上面那个流程图展示的是SFM的原理，后续还要经过MVS和Dense reconstruction来得到更完整的3D模型</p>
 <p><strong>性能</strong></p>
-<p><em>These methods produced excellent results in many cases, but typically cannot completely recover from unreconstructed regions, or from “over-reconstruction”,
-when MVS generates inexistent geometry.</em></p>
+<p><em>"These methods produced excellent results in many cases, but typically cannot completely recover from unreconstructed regions, or from “over-reconstruction”,
+when MVS generates inexistent geometry."</em></p>
 <h3 id="neural-rendering-and-radiance-fieldsnerf">Neural Rendering and Radiance Fields（NeRF）</h3>
 
 
