@@ -1018,13 +1018,13 @@
 <p><strong>核心思想：</strong>一次同时参与运算的不是一个值，而是多个值一起算，即一个向量。通过将一些串行的程序向量化，我们可以优化它的性能。</p>
 <details class="example" open="open">
 <summary>矩阵加法</summary>
-<p><img alt="矩阵加法" src="../img/2-matrix_add.png" title="原始的矩阵加法代码" /></p>
+<p><img alt="矩阵加法" src="../img/2-matrix_add.webp" title="原始的矩阵加法代码" /></p>
 <p>👉大量使用for循环，一次只能执行一条，造成极大浪费。</p>
 <p>💡<strong>优化思路：</strong>矩阵相加的过程中，一个位置的运算和其它位置都没有关系（无依赖关系），只和原来两个矩阵相应的坐标值有关。所以矩阵加法可以并行完成。</p>
 </details>
 <details class="example" open="open">
 <summary>矩阵乘法</summary>
-<p><img alt="矩阵乘法" src="../img/2-matrix_prod.png" title="原始的矩阵乘法代码" /></p>
+<p><img alt="矩阵乘法" src="../img/2-matrix_prod.webp" title="原始的矩阵乘法代码" /></p>
 <p>👉实际有三重for循环，因为行列数已知所以最里面的for被展开了。</p>
 <p>💡<strong>优化思路：</strong>从 <span class="arithmatex">\(A \times B = C\)</span> 入手，C矩阵中的每一个值<span class="arithmatex">\(C_{i,j}\)</span>都是由A矩阵和B矩阵的两个一维的向量相乘得到的(行向量A_i和列向量B_j)，在计算时是不相干的，并且读取过程中输入不会被改动，因此可以并行处理。</p>
 </details>
@@ -1034,9 +1034,9 @@
 <details class="example" open="open">
 <summary>查找子序列</summary>
 <p>👉下面这段代码在序列seq中查找所有子序列sub对应的起始位置：
-<img alt="原始代码" src="../img/2-py_code1.2.png" title="原始代码" /></p>
+<img alt="原始代码" src="../img/2-py_code1.2.webp" title="原始代码" /></p>
 <p>👉这是用NumPy优化后的代码：</p>
-<p><img alt="NumPy代码" src="../img/2-py_code1.1.png" title="NumPy代码" /></p>
+<p><img alt="NumPy代码" src="../img/2-py_code1.1.webp" title="NumPy代码" /></p>
 <ul>
 <li><strong>点积：</strong>计算sub子序列与自己的点积，存放到target中。</li>
 <li><strong>用点积初筛：</strong>使用np.correlate函数，以sub为窗口长度在seq序列上逐个单位滑动，计算每个窗口与sub的点积（理论上是同时计算的），比较与target是否相同，np.where自动取出值为True的下标，将结果存入candidates。</li>
@@ -1047,15 +1047,15 @@
 </details>
 <details class="example" open="open">
 <summary>隐式的矩阵加法</summary>
-<p><img alt="矩阵" src="../img/2-matrix1.png" title="题目" /></p>
+<p><img alt="矩阵" src="../img/2-matrix1.webp" title="题目" /></p>
 <p>👉可以转换成三个矩阵相加，从而实现并行。</p>
-<p><img alt="解法" src="../img/2-matrix2.png" title="解法" /></p>
+<p><img alt="解法" src="../img/2-matrix2.webp" title="解法" /></p>
 </details>
 <h2 id="simd">SIMD 向量化</h2>
 <p>单指令多数据流（Single Instruction Multiple Data）——CPU发出一条指令，同时处理多个数据。</p>
 <details class="info" open="open">
 <summary>SIMD</summary>
-<p><img alt="SIMD工作" src="../img/2-SIMD.png" title="SIMD工作示意图" /></p>
+<p><img alt="SIMD工作" src="../img/2-SIMD.webp" title="SIMD工作示意图" /></p>
 <p>👉在x86架构下，SIMD一般和AVX等指令集联系在一起——AVX指令集中提供了大量可以单指令操作多个数据单元的指令。</p>
 </details>
 <details class="example" open="open">
@@ -1185,6 +1185,8 @@
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../javascripts/prefetch-images.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

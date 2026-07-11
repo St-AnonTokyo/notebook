@@ -28,6 +28,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/mathjax.js
+  - javascripts/prefetch-images.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:

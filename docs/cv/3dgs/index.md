@@ -26,7 +26,7 @@
     *"All these methods re-project and blend the input images into the novel view camera, and use the
     geometry to guide this re-projection."*
 
-    ![流程图](img/photogrametry.jpg "SFM流程图")
+    ![流程图](img/photogrametry.webp "SFM流程图")
 
     - **Input：**[Intrinsic Matrix](https://blog.csdn.net/gwplovekimi/article/details/90172544 "清楚简明的介绍")（3×3的内参矩阵K）用来描述单个相机拍摄图片的过程，即现实世界的点如何投影到2D平面上（三维点坐标到二维点坐标的映射关系），Image Frames是一组从不同位置、角度拍摄采集的照片样本。  
     - **Feature Extraction：**系统在每张图片中找容易被重复识别的特征点（如边角处、边缘处、纹理较明显的位置等），即图中绿色点。(feature points)
