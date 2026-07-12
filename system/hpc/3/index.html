@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://st-anontokyo.github.io/notebook/system/hpc/3/">
       
       
-        <link rel="prev" href="../2/">
+        <link rel="prev" href="../4/">
       
       
         <link rel="next" href="../../../cv/">
@@ -472,6 +472,8 @@
       
         
       
+        
+      
     
     
     
@@ -567,6 +569,34 @@
     
   
     向量化并行计算基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    性能分析基础
   
 
     
@@ -790,7 +820,41 @@
   <a href="#ascend-c_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ascend C 开发
+        Ascend C算子的开发调用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ascend C算子的开发调用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cann_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CANN算子类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运行时架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核函数调用
       
     </span>
   </a>
@@ -799,6 +863,22 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ascend-c_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ascend C编程模型与编程范式
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1138,7 +1218,41 @@
   <a href="#ascend-c_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ascend C 开发
+        Ascend C算子的开发调用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ascend C算子的开发调用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cann_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CANN算子类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运行时架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核函数调用
       
     </span>
   </a>
@@ -1147,6 +1261,22 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ascend-c_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ascend C编程模型与编程范式
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1237,6 +1367,7 @@
 
 
 <h1 id="_1">华为昇腾异构并行程序设计</h1>
+<hr />
 <h2 id="ai">昇腾AI处理器软硬件架构</h2>
 <h3 id="ascendai">昇腾(Ascend)AI处理器</h3>
 <details class="note" open="open">
@@ -1349,7 +1480,58 @@
 <li>模型并行：将模型的不同部分（如不同的层/网络）分布到不同的计算节点上。（各个节点负责一部分计算，可能需要频繁的跨节点通信）</li>
 </ul>
 <p><img alt="大模型并行" src="../img/3-ai_parallel.webp" title="大模型并行" /></p>
-<h3 id="ascend-c_1">Ascend C 开发</h3>
+<h3 id="ascend-c_1">Ascend C算子的开发调用</h3>
+<h4 id="cann_1">CANN算子类型</h4>
+<p><strong>AI core算子：</strong>运行在AI core上的算子，执行数据密集的矩阵、向量及标量计算。</p>
+<p><strong>AI CPU算子：</strong>运行在AI CPU上的算子，有以下三种情况——</p>
+<ul>
+<li>不适合AI core运行的算子，例如非矩阵类复杂计算、逻辑比较复杂的分支密集型算子等（如离散数据类的计算、资源管理类的计算、依赖随机数生成的计算）。</li>
+<li>AI core不支持的算子，例如算子需要某些数据类型，但AI core不支持。</li>
+<li>若AI core算子实现较为困难，可通过自定义AI CPU算子进行功能调试，后续性能调试再用AI core。</li>
+</ul>
+<h4 id="_9">运行时架构</h4>
+<ul>
+<li><strong>Runtime</strong>，即运行时，为神经网络的任务分配提供了资源管理通道。包括存储（Memory）管理、设备（Device）管理、执行流（Stream）管理、事件（Event）管理、核（Kernel）函数执行等功能。</li>
+<li><strong>Task Schedule</strong>，即任务调度，运行在Device侧的任务调度CPU上，负责将Runtime分发的具体任务进一步分发到AI CPU上。</li>
+</ul>
+<p><img alt="架构" src="../img/3-run_structure.webp" title="运行时架构总览" /></p>
+<p><strong>关键模块</strong></p>
+<ul>
+<li>Device模块：指定计算运行的真实设备。</li>
+<li>Stream模块：把整体计算任务分为多个可独立执行的Stream，并发执行。</li>
+<li>Kernel模块：进行核函数的调用。</li>
+<li>Memory模块：显式在Host侧和Device侧间复制共享数据。</li>
+<li>Event模块：用于Stream与Stream之间、Task与Host之间、Stream与Host之间进行同步时触发。</li>
+</ul>
+<p><strong>进程中任务调度</strong></p>
+<ul>
+<li>流创建过程：流在进程内提供保序队列（保证若干指令在同一队列依次执行），每个进程在每个Device上都可以创建一条或多条流。</li>
+<li>任务下发调度：由Kernel完成，是上面提过的Runtime和Task Schedule的异步流水过程（Runtime提交任务、Kernel持续下发任务、Task Schedule同时调度任务、Device同时执行任务），建立在保序队列的基础上（防止破坏指令间依赖关系）。</li>
+</ul>
+<p><img alt="任务调度" src="../img/3-task_schedule.webp" title="任务调度" /></p>
+<details class="info" open="open">
+<summary>同步机制</summary>
+<p><img alt="同步机制" src="../img/3-synchronous.webp" title="同步机制" /></p>
+<ul>
+<li>Stream间同步</li>
+<li>Task与Host同步</li>
+<li>Stream与Host同步</li>
+</ul>
+</details>
+<h4 id="_10">核函数调用</h4>
+<p>分为内核符调用和单算子API调用。</p>
+<details class="abstract" open="open">
+<summary>内核符调用</summary>
+<p>直接启动自己编写的Ascend C Kernel，需要在函数定义中给出较为底层、具体的参数。</p>
+<p><img alt="内核符" src="../img/3-kernel.webp" title="内核符调用" /></p>
+</details>
+<details class="abstract" open="open">
+<summary>单算子API调用</summary>
+<p>调用算子库中已经封装好的单算子API，使用前提是所使用的算子已在算子库中或已经通过完整开发流程进行编译部署。</p>
+<p><img alt="api" src="../img/3-api.webp" title="单算子API调用" /></p>
+</details>
+<p>👉代码具体要怎么写下面会讲，现在大概知道它们的区别就行了。</p>
+<h2 id="ascend-c_2">Ascend C编程模型与编程范式</h2>
 
 
 
@@ -1385,7 +1567,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 向量化并行计算基础">
+          <a href="../4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 性能分析基础">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1395,7 +1577,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                向量化并行计算基础
+                性能分析基础
               </div>
             </div>
           </a>
