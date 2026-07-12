@@ -8,29 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://st-anontokyo.github.io/notebook/">
+        <link rel="canonical" href="https://st-anontokyo.github.io/notebook/system/hpc/4/">
       
       
+        <link rel="prev" href="../2/">
       
-        <link rel="next" href="system/">
+      
+        <link rel="next" href="../3/">
       
       
         
       
       
-      <link rel="icon" href="img/favicon.ico">
+      <link rel="icon" href="../../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>A.Cloud's Notebook</title>
+        <title>性能分析基础 - A.Cloud's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -114,9 +116,9 @@
       
     
     
-      <link rel="stylesheet" href="style/style.css">
+      <link rel="stylesheet" href="../../../style/style.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -141,7 +143,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#introduction-to-profiling" class="md-skip">
           跳转至
         </a>
       
@@ -157,9 +159,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="A.Cloud&#39;s Notebook" class="md-header__button md-logo" aria-label="A.Cloud's Notebook" data-md-component="logo">
+    <a href="../../.." title="A.Cloud&#39;s Notebook" class="md-header__button md-logo" aria-label="A.Cloud's Notebook" data-md-component="logo">
       
-  <img src="img/logo.png" alt="logo">
+  <img src="../../../img/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -176,7 +178,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              主页
+              性能分析基础
             
           </span>
         </div>
@@ -239,11 +241,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -260,11 +260,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="system/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -286,7 +288,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="cv/" class="md-tabs__link">
+        <a href="../../../cv/" class="md-tabs__link">
           
   
   
@@ -328,9 +330,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="A.Cloud&#39;s Notebook" class="md-nav__button md-logo" aria-label="A.Cloud's Notebook" data-md-component="logo">
+    <a href="../../.." title="A.Cloud&#39;s Notebook" class="md-nav__button md-logo" aria-label="A.Cloud's Notebook" data-md-component="logo">
       
-  <img src="img/logo.png" alt="logo">
+  <img src="../../../img/logo.png" alt="logo">
 
     </a>
     A.Cloud's Notebook
@@ -354,19 +356,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -382,7 +375,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -391,6 +383,8 @@
       
   
   
+    
+  
   
   
     
@@ -406,18 +400,21 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="system/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -435,13 +432,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -458,6 +455,8 @@
                 
   
   
+    
+  
   
   
     
@@ -482,15 +481,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="system/hpc/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -514,7 +513,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -534,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/hpc/1/" class="md-nav__link">
+      <a href="../1/" class="md-nav__link">
         
   
   
@@ -562,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/hpc/2/" class="md-nav__link">
+      <a href="../2/" class="md-nav__link">
         
   
   
@@ -587,10 +586,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="system/hpc/4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    性能分析基础
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -606,6 +632,199 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Performance?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Performance?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何衡量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        流水线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存性能衡量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序性能瓶颈
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="程序性能瓶颈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roofline-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roofline Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amdahls-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amdahl’s Law
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-design-philosophies-cpu-vs-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Design Philosophies: CPU vs. GPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-the-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measuring the Machine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring the Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ceilings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ceilings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiling the Program
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profiling the Program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gemm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例分析：矩阵乘法（GEMM）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例分析：矩阵乘法（GEMM）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#round-0-naive-gemm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 0: Naive GEMM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -618,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/hpc/3/" class="md-nav__link">
+      <a href="../3/" class="md-nav__link">
         
   
   
@@ -684,7 +903,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="cv/" class="md-nav__link ">
+            <a href="../../../cv/" class="md-nav__link ">
               
   
   
@@ -749,7 +968,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="cv/3dgs/" class="md-nav__link ">
+            <a href="../../../cv/3dgs/" class="md-nav__link ">
               
   
   
@@ -816,6 +1035,187 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Performance?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Performance?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何衡量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        流水线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存性能衡量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序性能瓶颈
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="程序性能瓶颈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roofline-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roofline Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amdahls-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amdahl’s Law
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-design-philosophies-cpu-vs-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Design Philosophies: CPU vs. GPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-the-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measuring the Machine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring the Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ceilings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ceilings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiling the Program
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profiling the Program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gemm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例分析：矩阵乘法（GEMM）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例分析：矩阵乘法（GEMM）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#round-0-naive-gemm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 0: Naive GEMM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -832,6 +1232,64 @@
   
 
 
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    主页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    系统
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    hpc短学期
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -842,8 +1300,185 @@
   
 
 
-<h1 id="_1">欢迎</h1>
-<p>欢迎来到我的个人笔记网站~~~</p>
+<h1 id="introduction-to-profiling">Introduction to Profiling</h1>
+<hr />
+<div class="admonition question">
+<p class="admonition-title">为何会有如此大的性能提升？</p>
+<p><img alt="问题" src="../img/4-question.webp" title="一个问题" /></p>
+</div>
+<h2 id="what-is-performance">What is Performance?</h2>
+<h3 id="_1">如何衡量</h3>
+<p><strong>Two different questions:</strong></p>
+<ul>
+<li>How long does one operation take, start to finish? ⇒ Latency (s)</li>
+<li>How many operations complete per unit time? ⇒ Throughput (op/s)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Latency</th>
+<th style="text-align: center;">Throughput</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Question</td>
+<td style="text-align: center;">“how long until my result?”</td>
+<td style="text-align: center;">“how many results per second”</td>
+</tr>
+<tr>
+<td>Units</td>
+<td style="text-align: center;">s, ms, ns, cycles</td>
+<td style="text-align: center;">op/s, FLOP/s, B/s, req/s</td>
+</tr>
+<tr>
+<td>Set by</td>
+<td style="text-align: center;">the <strong>dependent chain</strong></td>
+<td style="text-align: center;">the <strong>parallel width</strong></td>
+</tr>
+<tr>
+<td>In hardware</td>
+<td style="text-align: center;">memory access time, network RTT</td>
+<td style="text-align: center;">memory / link bandwidth</td>
+</tr>
+</tbody>
+</table>
+<details class="abstract" open="open">
+<summary>Little's Law</summary>
+<ul>
+<li>One-at-a-time: throughput = 1/latency</li>
+<li>Little's Law: &emsp;<span class="arithmatex">\(inflight = throughput \times latency\)</span></li>
+</ul>
+<p><img alt="law" src="../img/4-little_law.webp" title="a example for Little's Law" /></p>
+</details>
+<h3 id="_2">流水线</h3>
+<p><img alt="流水线" src="../img/4-pipeline.webp" title="Pipelining Compute and Memory for Free" /></p>
+<p>The out-of-order engine you just saw is a pipeline: while one FMA（浮点数乘加指令） executes,
+the loads for the next iterations are already in flight.</p>
+<p>👉计算与读内存并行</p>
+<p>👉<strong>the dependent chain is what nothing can hide</strong>——指令间的依赖关系不能被流水线隐藏，需按照先后顺序</p>
+<p><span class="arithmatex">\(Runtime = \max(dependent chain,throughput limits)\)</span></p>
+<details class="example" open="open">
+<summary>One Accumulator vs. Eight</summary>
+<p><img alt="vs" src="../img/4-vs.webp" title="矩阵乘法优化" /></p>
+<ul>
+<li>单链每次s自增都依赖上一个结果，CPU必须一个一个顺序执行。</li>
+<li>八链将单次迭代拆分成8个独立累加，最后再对s0~s7求和，减少了依赖关系，使得CPU可以并行处理。</li>
+</ul>
+<p><img alt="FMA" src="../img/4-FMA.webp" title="具体原理" /></p>
+<p>👉The FMA unit is a pipeline: latency 4 cy, but it can start a new op every cycle — if that op is independent.</p>
+</details>
+<h3 id="_3">内存性能衡量</h3>
+<div class="admonition tip">
+<p class="admonition-title">Memory by the Numbers</p>
+<p>&emsp;&emsp;&emsp;&ensp;<strong>latency side</strong></p>
+<p><img alt="latency" src="../img/4-latency.webp" title="latency" /></p>
+<hr />
+<p>&emsp;&emsp;&emsp;&ensp;<strong>bandwidth side</strong></p>
+<p><img alt="bandwidth" src="../img/4-bandwidth.webp" title="bandwidth" /></p>
+</div>
+<h3 id="_4">程序性能瓶颈</h3>
+<h4 id="roofline-model">Roofline Model</h4>
+<p><img alt="roofline" src="../img/4-roofline.webp" title="roofline model" /></p>
+<p>👉横轴I表示每字节内存访问能完成的浮点运算次数，反映了程序的密集程度；纵轴表示每秒完成的浮点运算次数，反映程序性能。</p>
+<p><strong>Can be optimized：</strong></p>
+<ul>
+<li>A: memory-bound, need to saturate β.（β为内存带宽，其代表系统每秒能传输的数据量，限制了程序性能）</li>
+<li>B: compute-bound <span class="arithmatex">\(\pi\)</span>, use vectorize, FMA.（<span class="arithmatex">\(\pi\)</span>为处理器的理论最大计算能力）</li>
+<li>C: latency-bound, not enough concurrency.（延迟问题）</li>
+</ul>
+<h4 id="amdahls-law">Amdahl’s Law</h4>
+<p>Let p be the parallelizable fraction, on N cores. S represents "speed up"（加速比）:</p>
+<p><br></p>
+<p>&emsp;&emsp;&emsp; <span class="arithmatex">\(S(N) = \frac{1}{(1-p)+\frac{p}{N}}\)</span> &emsp;&emsp;&emsp; <span class="arithmatex">\(S(\infty)=\frac{1}{1-p}\)</span></p>
+<p><br></p>
+<p>💡尽可能增大p的值，找到尽可能多的可并行的地方。</p>
+<h3 id="two-design-philosophies-cpu-vs-gpu">Two Design Philosophies: CPU vs. GPU</h3>
+<p><strong>CPU：minimize latency</strong></p>
+<ul>
+<li>few powerful cores, huge caches</li>
+<li>out-of-order, branch prediction</li>
+<li>one thread finishes fast</li>
+</ul>
+<p><img alt="cpu" src="../img/4-cpu.webp" title="cpu" /></p>
+<p><strong>GPU：maximize throughput</strong></p>
+<ul>
+<li>thousands of simple lanes</li>
+<li>latency hidden by other warps</li>
+<li>any single thread is not that fast</li>
+</ul>
+<p><img alt="gpu" src="../img/4-gpu.webp" title="gpu" /></p>
+<details class="example" open="open">
+<summary>Experiment 1: Serial Chain</summary>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">17</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>CPU, 1 core (m701): 2.15 ns/step
+GPU, 1 thread (H800): 17.38 ns/step &lt;- 8x slower
+</code></pre></div>
+<ul>
+<li>need enough parallelism for GPU to win.</li>
+</ul>
+</details>
+<details class="example" open="open">
+<summary>Experiment 2: Throughput</summary>
+<p>Dense 16-bit GEMM（General Matrix Multiplication）, N = 8192:</p>
+<div class="language-text highlight"><pre><span></span><code>48 CPU cores, MKL bf16 (AMX tiles): 25.4 TFLOPS
+one H800, cuBLAS fp16 (tensor cores): 683 TFLOPS &lt;- 27x
+</code></pre></div>
+<ul>
+<li>every tile of C is independent work: 81922 outputs → millions of parallel tasks → GPU wins </li>
+</ul>
+</details>
+<p><strong>CPU must</strong>
+- the OS, syscalls, drivers
+- branchy control flow
+- pointer chasing (trees, parsers)
+- latency-critical serial logic
+- launching the GPU’s work</p>
+<p><strong>GPU shines</strong>
+- GEMM
+- stencils, images, rendering
+- attention / convolutions
+- Monte Carlo, particles
+- anything = millions of independent tasks</p>
+<p>👉Neither replaces the other — serial work still needs a CPU; throughput
+belongs to the lanes.</p>
+<h2 id="measuring-the-machine">Measuring the Machine</h2>
+<h3 id="ceilings">Ceilings</h3>
+<p>👉<strong>Know Your Ceilings First：</strong></p>
+<p>A performance number is meaningless until you compare it against the
+ceiling, so measure the roofs (π Compute Capability, β Memory Bandwidth) first. The roof also tells you when to stop.</p>
+<details class="question" open="open">
+<summary>如何测量？</summary>
+<p><img alt="ceiling" src="../img/4-ceiling.webp" title="ceiling of different hardware" /></p>
+</details>
+<h2 id="profiling-the-program">Profiling the Program</h2>
+<p><img alt="cycle" src="../img/4-profile_cycle.webp" title="The Optimization Loop" /></p>
+<h3 id="gemm">案例分析：矩阵乘法（GEMM）</h3>
+<h4 id="round-0-naive-gemm">Round 0: Naive GEMM</h4>
+<div class="language-C highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">            </span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">];</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code>N=1024 time=4.046 s perf=0.53 GFLOP/s
+</code></pre></div>
+<p>😅One core’s roof is 82, we are at 0.6%.</p>
+<details class="question" open="open">
+<summary>What Does the Machine Actually See?</summary>
+<p><img alt="内存" src="../img/4-r0_pattern.webp" title="数据在内存中的分布状况" /></p>
+<p>由于矩阵按行主序存储（同一行数据从左到右连续存在内存里），在内层循环中列遍历矩阵B时，列邻居在内存中相隔甚远，内存地址跳变大。</p>
+<ul>
+<li>One iteration = 1 FMA + 1 friendly load + 1 hostile load</li>
+</ul>
+<p>👉在缓存中表现就是这样：</p>
+<p><img alt="cache line" src="../img/4-r0_cacheline.webp" title="cache line" /></p>
+</details>
 
 
 
@@ -878,15 +1513,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
+          
+          <a href="../2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 向量化并行计算基础">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                向量化并行计算基础
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="system/" class="md-footer__link md-footer__link--next" aria-label="下一页: 系统">
+          <a href="../3/" class="md-footer__link md-footer__link--next" aria-label="下一页: 华为昇腾异构并行程序设计">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                系统
+                华为昇腾异构并行程序设计
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -945,14 +1596,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
-        <script src="javascripts/prefetch-images.js"></script>
+        <script src="../../../javascripts/prefetch-images.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
