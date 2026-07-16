@@ -811,6 +811,61 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#round-1-fix-the-access-pattern-ikj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 1: Fix the Access Pattern (ikj)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-2-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 2: Blocking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-3-auto-vectorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 3: Auto-Vectorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-4-the-micro-kernel-avx-512" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 4: the Micro-Kernel AVX-512
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-5-going-multicore-openmp-on-the-micro-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 5: Going Multicore — OpenMP on the Micro-Kernel
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1204,6 +1259,61 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#round-1-fix-the-access-pattern-ikj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 1: Fix the Access Pattern (ikj)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-2-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 2: Blocking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-3-auto-vectorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 3: Auto-Vectorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-4-the-micro-kernel-avx-512" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 4: the Micro-Kernel AVX-512
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-5-going-multicore-openmp-on-the-micro-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 5: Going Multicore — OpenMP on the Micro-Kernel
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1478,6 +1588,173 @@ ceiling, so measure the roofs (π Compute Capability, β Memory Bandwidth) first
 </ul>
 <p>👉在缓存中表现就是这样：</p>
 <p><img alt="cache line" src="../img/4-r0_cacheline.webp" title="cache line" /></p>
+</details>
+<ul>
+<li>Classify by what the innermost loop streams:</li>
+</ul>
+<p><img alt="attemp" src="../img/4-r01.webp" title="更换内层循环" /></p>
+<p>💡我们发现，调整顺序，把j放到内存循环后，就不再需要列遍历，只有行遍历了。</p>
+<h4 id="round-1-fix-the-access-pattern-ikj">Round 1: Fix the Access Pattern (ikj)</h4>
+<div class="language-C highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">];</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">            </span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">];</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><img alt="r1" src="../img/4-r1.webp" title="内存情况" /></p>
+<div class="language-text highlight"><pre><span></span><code>N=1024 time=0.54 s pref=4.0 GFLOP/s
+</code></pre></div>
+<details class="quote" open="open">
+<summary>使用VTune工具进行性能分析</summary>
+<p>VTune是Intel开发的性能分析工具，它通过收集如下所述的多维度的数据帮助开发者识别性能瓶颈。</p>
+<p><img alt="full story" src="../img/4-VTune_fullstory.webp" title="the full story" /></p>
+<ul>
+<li>Top-down accounting: every slot is <strong>Retiring</strong> / <strong>Front-end</strong> / <strong>Bad speculation</strong> / <strong>Back-end</strong> （将程序执行中的每个流水线槽位，按执行状态分类为四类）</li>
+</ul>
+</details>
+<p><strong>VTune Microarchitecture View on GEMM</strong></p>
+<div class="language-bash highlight"><span class="filename">bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>vtune<span class="w"> </span>-collect<span class="w"> </span>uarch-exploration<span class="w"> </span>--<span class="w"> </span>./gemm_naive<span class="w"> </span><span class="m">1024</span>
+</span></code></pre></div>
+<p><strong>R0与R1性能对比：</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">naive (ijk)</th>
+<th style="text-align: center;">ikj (-O3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPI Rate（每指令周期数）</td>
+<td style="text-align: center;">1.58</td>
+<td style="text-align: center;">0.88</td>
+</tr>
+<tr>
+<td>Retiring（退休指令占比）</td>
+<td style="text-align: center;">9.2%</td>
+<td style="text-align: center;">21.7% of pipeline slots</td>
+</tr>
+<tr>
+<td>Back-End Bound（后端瓶颈）</td>
+<td style="text-align: center;">90.6%</td>
+<td style="text-align: center;">73.6%</td>
+</tr>
+<tr>
+<td>Memory Bound（内存瓶颈）</td>
+<td style="text-align: center;">63.9%</td>
+<td style="text-align: center;">34.0%</td>
+</tr>
+</tbody>
+</table>
+<p>👍The quantified verdict: memory-bound, and R1 halves it.</p>
+<details class="failure" open="open">
+<summary>Zoom Out: What One Outer i Really Touches</summary>
+<ul>
+<li>GEMM: <span class="arithmatex">\(2N^3\)</span> FLOPs on <span class="arithmatex">\(3N^2\)</span> data — every element could be used <span class="arithmatex">\(N\)</span> times.</li>
+</ul>
+<p><img alt="R1" src="../img/4-r1_bad.webp" title="内存重复利用" /></p>
+<p>👎Nothing of B survives — the cache holds it, but never gets to reuse it——每次i循环都要重复遍历B中所有元素(j,k的所有组合)</p>
+</details>
+<p>💡Decision by Arithmetic: Size the Blocks.</p>
+<h4 id="round-2-blocking">Round 2: Blocking</h4>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">BS</span><span class="p">)</span><span class="w"> </span><span class="c1">// tiles sized so that</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">BS</span><span class="p">)</span><span class="w"> </span><span class="c1">// A, B, C blocks stay</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">BS</span><span class="p">)</span><span class="w"> </span><span class="c1">// resident in cache</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">            </span><span class="cm">/* ikj loops within the tile */</span>
+</span></code></pre></div>
+<p><img alt="blocking" src="../img/4-r2_blocking.webp" title="blocking in memory" /></p>
+<ul>
+<li>Blocking changes traffic, not instructions</li>
+</ul>
+<p>👉通过计算让<span class="arithmatex">\(BS \times BS\)</span>的小矩阵的大小适配缓存，避免超出缓存后丢失较早的数据，于是整个内部的ikj循环就可以不断复用缓存。</p>
+<details class="success" open="open">
+<summary>Zoom Out Again: the Same Sweep, in Block Units</summary>
+<p><img alt="zoom out" src="../img/4-r2_zoomout.webp" title="zoom out" /></p>
+<ul>
+<li>Same sweep, new unit: the block is consumed while it is still in the cache.</li>
+</ul>
+<p>👉<strong>Residency: What Actually Lives in the Cache——</strong></p>
+<p><img alt="cache line" src="../img/4-r2_cache.webp" title="what happens in the cache line" /></p>
+<ul>
+<li>B traffic drops BS×: a line now serves a whole block of work before it leaves — (the library’s packed panels push this to “each matrix ∼once”).</li>
+</ul>
+</details>
+<h4 id="round-3-auto-vectorization">Round 3: Auto-Vectorization</h4>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>— Sometimes Free Performance</strong></p>
+<div class="language-C highlight"><span class="filename">编译命令：让编译器自动将程序向量化</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">gcc</span><span class="w"> </span><span class="o">-</span><span class="n">O3</span><span class="w"> </span><span class="o">-</span><span class="n">march</span><span class="o">=</span><span class="n">native</span><span class="w"> </span><span class="o">-</span><span class="n">fopt</span><span class="o">-</span><span class="n">info</span><span class="o">-</span><span class="n">vec</span><span class="o">-</span><span class="n">missed</span><span class="w"> </span><span class="n">gemm_ikj</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">why</span><span class="w"> </span><span class="n">not</span>
+</span></code></pre></div>
+<p><img alt="r3" src="../img/4-r3.webp" title="Round3_demo" /></p>
+<div class="language-text highlight"><pre><span></span><code>ikj -O2: 4.0 GFLOP/s ikj -O3 -march=native: 7.2 GFLOP/s (1.8x)
+</code></pre></div>
+<ul>
+<li>The vectorizer gives up silently. 编译器在尝试自动向量化的过程中遇到了阻碍，于是它放弃了。</li>
+</ul>
+<details class="note" open="open">
+<summary>when auto-vec?</summary>
+<p><img alt="table" src="../img/4-r3_table.webp" title="对比" /></p>
+<p>👉优先级应该是：layout（内存布局） → parallel（并行化） → auto-vec（自动向量化） → intrinsics last（手写SIMD内联互编）</p>
+</details>
+<details class="question" open="open">
+<summary>为什么自动向量化只能达到7.16？（当手工能达到160）</summary>
+<p>每次内层的ikj循环中，都进行了四个操作：load B + load C + FMA + store C</p>
+<p><img alt="table" src="../img/4-r34_table.webp" title="理想vs实际" /></p>
+<p>😭即使数据已经被放在了极度靠近 CPU 的 L1 缓存里，CPU 的数据端口（CPU与缓存间运输数据的通道）数量也是有限的。即便增大向量的宽度，CPU也只能等待数据传输过来，不能立即进行FMA运算。</p>
+<p>🤔我们可以在寄存器内部存储C的一个分块。寄存器在CPU内部，不依赖数据端口传输数据。如此，C矩阵的数据就可以反复消耗不同位置的A和B的数据，消除了load C/store C的步骤，还腾出了端口。这样每取一次内存，就可以进行大量FMA运算。</p>
+</details>
+<h4 id="round-4-the-micro-kernel-avx-512">Round 4: the Micro-Kernel AVX-512</h4>
+<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">代码</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span>
+<span class="normal"><a href="#__codelineno-6-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">__m512d</span><span class="w"> </span><span class="n">c00</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_mm512_setzero_pd</span><span class="p">(),</span><span class="w"> </span><span class="n">c01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">c10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">c11</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="cm">/* 4x2 zmm accumulators */</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="n">__m512d</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_mm512_load_pd</span><span class="p">(</span><span class="n">bp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="o">*</span><span class="mi">16</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">     </span><span class="cm">/* packed B panel, load first 8 elements into register b0*/</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="n">__m512d</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_mm512_load_pd</span><span class="p">(</span><span class="n">bp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="o">*</span><span class="mi">16</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="cm">/*load the other 8 elements*/</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="n">c00</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_mm512_fmadd_pd</span><span class="p">(</span><span class="n">_mm512_set1_pd</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="n">k</span><span class="p">]),</span><span class="w"> </span><span class="n">b0</span><span class="p">,</span><span class="w"> </span><span class="n">c00</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="cm">/* copy A into 8 register-channel multiply B&#39;s 8 elements at the same time ... */</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><img alt="demo" src="../img/4-r4_demo.webp" title="代码图解" /></p>
+<div class="language-text highlight"><pre><span></span><code>N=1024: 53.3 N=2048: 55.2 GFLOP/s = 2/3 of the one-core roof (82)
+</code></pre></div>
+<h4 id="round-5-going-multicore-openmp-on-the-micro-kernel">Round 5: Going Multicore — OpenMP on the Micro-Kernel</h4>
+<p>使用openMP，在R4的基础上把矩阵A、C按行分给多个线程（C[i][j]的计算不依赖C中其它元素，可以并行），各个线程共享缓存L3中B的数据。</p>
+<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">代码</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">#pragma omp parallel </span><span class="cm">/* each thread: one contiguous row band */</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p">{</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">i0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kt">long</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="cm">/* R4 kernel body unchanged; packed B shared by all */</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><img alt="demo" src="../img/4-r5_demo.webp" title="代码图解" /></p>
+<div class="language-text highlight"><pre><span></span><code>N=2048: 1T 54 12T 592 24T 969 48T 1729 96T 707 GFLOP/s
+N=4096: 48T 1531 N=8192: 48T 1432 (gemm_avx512_omp.c)
+</code></pre></div>
+<ul>
+<li>32× @48T = 56% of π; 96T regresses——线程数增加到96后性能严重倒退。</li>
+</ul>
+<details class="bug" open="open">
+<summary>Threading Reality Check: Spin Time（自旋时间）</summary>
+<p><img alt="elapsed time" src="../img/4-r5_elapsedtime.webp" title="Elapsed Time" /></p>
+<ul>
+<li>Wall-clock says “parallel”; the profiler says half idle.</li>
+</ul>
+<p>👎Some Real HPC app, 32 threads: of 5488s CPU time, 2635 s is spin. </p>
+<p><img alt="metrophy" src="../img/4-r5_visualisation.webp" title="形象化的展示" /></p>
 </details>
 
 

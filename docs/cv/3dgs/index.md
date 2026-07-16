@@ -10,6 +10,8 @@
 
 本文主要基于上述资料完成，粗浅地介绍了3dgs的理论基础。
 
+---
+
 ## Introduction
 
 !!! question "3D reconstruction from multiple images"
