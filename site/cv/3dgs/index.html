@@ -828,7 +828,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Introduction">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Work
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Related Work">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -853,8 +864,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#point-based-rendering-and-radiance-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point-Based Rendering and Radiance Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
   
 </li>
       
@@ -956,6 +989,13 @@
 <p class="admonition-title">3D reconstruction from multiple images</p>
 <p>根据一组从不同角度和位置拍摄的二维照片构建一种三维表示。我们希望后续能够通过这个3d模型复现整个场景。</p>
 </div>
+<p>对于这个问题，我们要考虑主要有三点：</p>
+<ul>
+<li>如何表示这个场景</li>
+<li>如何根据已有的二维信息来建构这个表示模型</li>
+<li>如何使用这个模型</li>
+</ul>
+<h2 id="related-work">Related Work</h2>
 <p>下面简单介绍一些常用的3d重建方法，虽然本文要介绍的3dgs解决问题的性能普遍更优，但它以这些技术为基础，相关性较强，所以有必要了解一下。</p>
 <h3 id="photogrammetry">Photogrammetry</h3>
 <p>这是最早用来解决这个问题的方法。</p>
@@ -984,11 +1024,86 @@ geometry to guide this re-projection."</em></p>
 <li>Multi View Stereo (MVS)：在相机位姿的基础上估计像素深度，生成稠密点云。</li>
 <li>Dense reconstruction：进一步生成更完整的三维模型</li>
 </ul>
-<p>👉上面那个流程图展示的是SFM的原理，后续还要经过MVS和Dense reconstruction来得到更完整的3D模型</p>
+<p>👉上面的流程图展示的是SFM的原理，后续还要经过MVS和Dense reconstruction来得到更完整的3D模型</p>
 <p><strong>性能</strong></p>
 <p><em>"These methods produced excellent results in many cases, but typically cannot completely recover from unreconstructed regions, or from “over-reconstruction”,
 when MVS generates inexistent geometry."</em></p>
 <h3 id="neural-rendering-and-radiance-fieldsnerf">Neural Rendering and Radiance Fields（NeRF）</h3>
+<p>NERF为3d重建引入了深度学习方法。</p>
+<details class="note" open="open">
+<summary>NeRF步骤</summary>
+<p><img alt="Vanilla NeRF Pipeline" src="img/nerf.webp" /></p>
+<ul>
+<li>
+<p>建立辐射场函数 <span class="arithmatex">\(F_\Theta(\mathbf{x}, \mathbf{d}) \rightarrow (\sigma, \mathbf{c})\)</span></p>
+<p>输入： </p>
+<ol>
+<li>位置： <span class="arithmatex">\(\mathbf{x}=(x,y,z)\)</span></li>
+<li>观察方向：<span class="arithmatex">\(\mathbf{d}=(\theta,\phi)\)</span></li>
+</ol>
+<p>输出： 体密度 <span class="arithmatex">\(\mathbf{\sigma}\)</span>和RGB颜色 <span class="arithmatex">\(\mathbf{c}\)</span></p>
+<p>👉建模时假设物体各向同性，因此体密度仅由位置决定，与看的视角无关。颜色由位置、方向共同决定（镜面反射、材质折射率······）</p>
+</li>
+<li>
+<p>采样光线：对训练图上每个像素，从<strong>相机中心</strong>向其发一条射线，沿射线离散采样一组点作为样本。（巨量的样本！）</p>
+</li>
+<li><a href="https://blog.csdn.net/leviopku/article/details/133317676">位置编码</a>（positional encoding）：利用一组 <span class="arithmatex">\(\sin/\cos\)</span> 把坐标映射成一组正弦基 <span class="arithmatex">\(\gamma(p) = \big(\sin(2^0\pi p), \cos(2^0\pi p),\ \sin(2^1\pi p), \cos(2^1\pi p),\ \dots,\ \sin(2^{L-1}\pi p), \cos(2^{L-1}\pi 
+p)\big)\)</span></li>
+</ul>
+<p>&emsp; 把原先的输入提升成更高维的向量（维数<span class="arithmatex">\(\times 2 L\)</span>倍）。</p>
+<p>&emsp; 🤔MLP（多层感知机）用梯度下降训练时，对输入的“分辨率”不够，难以识别微小的差异和变动。因此它天然倾向于学会较低频（在空间中变化慢）的函数，难以学会高频（在空间中变化快）的函数。</p>
+<details class="example">
+<summary>位置编码的例子</summary>
+<p>假设坐标归一化到 <span class="arithmatex">\([-1,1]\)</span>，考虑两个相邻点<span class="arithmatex">\(x = 0.500\)</span> 和 <span class="arithmatex">\(x = 0.501\)</span>：</p>
+<ul>
+<li>直接输入网络：输入只差0.001，经过几层ReLU后，输出差异微乎其微。</li>
+<li>经过位置编码：令<span class="arithmatex">\(L=10\)</span>，在<span class="arithmatex">\(k=9\)</span>那一维是 <span class="arithmatex">\(\sin(512\pi \Delta x)\)</span>，两个点的相位差被放大到 <span class="arithmatex">\(512\pi \times 0.001 \approx 1.6\)</span> 弧度，约为四分之一周期。</li>
+</ul>
+<p>位置编码使两点的差异沿不同频率被放大了 <span class="arithmatex">\(2^k \pi\)</span> 倍，让神经网络能够识别出微小变动。</p>
+<p>💡一个有趣的事实：为了避免周期性对样本的影响（两个坐标点映射到的高维向量完全一致），这种编码方式有两重防御机制。</p>
+<ul>
+<li>sin/cos成对： <span class="arithmatex">\((\sin\theta, \cos\theta)\)</span> 唯一确定一组极坐标，让函数在同周期内保持单射。</li>
+<li>
+<p>要整体编码碰撞，必须在所有 <span class="arithmatex">\(k=0,\dots,L-1\)</span> 上同时对齐：</p>
+<p>令 <span class="arithmatex">\(d=\Delta p\)</span>，则</p>
+<div class="arithmatex">\[2^{k}\pi d \equiv 0 \pmod{2\pi} \iff 2^{k-1}d \in \mathbb{Z}, \quad \forall k\]</div>
+<p>考察k的不同取值：<span class="arithmatex">\(k=0\)</span> 给出 <span class="arithmatex">\(d \in 2\mathbb{Z}\)</span>，<span class="arithmatex">\(k=L-1\)</span> 给出 <span class="arithmatex">\(d \in 2^{2-L}\mathbb{Z}\)</span>，交集仍是 <span class="arithmatex">\(d \in 2\mathbb{Z}\)</span>。</p>
+<p>因此，当且仅当d是偶数，编码才会在所有频率方向都无差异。而NeRF的坐标归一化到 <span class="arithmatex">\(p \in [-1,1]\)</span>，宽度正好等于2，所以唯一会碰撞的只有 <span class="arithmatex">\(\gamma(-1) = \gamma(1)\)</span>。这是边界，对域内的识别无影响。</p>
+</li>
+</ul>
+</details>
+<ul>
+<li>
+<p>进入MLP：位置编码后的 <span class="arithmatex">\(\mathbf{x}\)</span> 先进网络 → 输出 <span class="arithmatex">\(\sigma\)</span> 和一个中间特征；中间特征再拼上编码后的 <span class="arithmatex">\(\mathbf{d}\)</span> → 最后输出颜色 <span class="arithmatex">\(\mathbf{c}\)</span>。</p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/qq_42415112/article/details/134351239">体渲染</a>（Volume Rendering）： 把这些离散点的颜色按不透明度从前往后加权累加，处理物体的遮挡与前后关系。</p>
+</li>
+</ul>
+<div class="arithmatex">\[\hat{C}(\mathbf{r}) = \sum_{i} T_i (1-e^{-\sigma_i\delta_i}) \mathbf{c}i  \quad T_i = e^{-\sum{j&lt;i}\sigma_j\delta_j}\]</div>
+<ul>
+<li>损失 + 优化：把渲染出的像素颜色 <span class="arithmatex">\(\hat{C}\)</span> 和真实照片颜色对比，使用反向传播调参。</li>
+</ul>
+</details>
+<h3 id="point-based-rendering-and-radiance-fields">Point-Based Rendering and Radiance Fields</h3>
+<p><strong>点渲染（Point-Based Rendering）</strong></p>
+<p>体渲染的离散形式，用点云来表示场景，把点投影到屏幕上来画图。点云通常来自Photogrammetry的 SfM 或 MVS 。</p>
+<p><span class="arithmatex">\(\hat{C} = \sum_{i=1}^N T_i (1-e^{-\sigma_i\delta_i}) c_i, \qquad T_i = \prod_{j=1}^{i-1} e^{-\sigma_j \delta_j}\)</span></p>
+<p><em>While true to the underlying data, point sample rendering suffers from holes, causes aliasing, and is strictly discontinuous.</em></p>
+<p>🤔我们可以通过“ <strong>Splatting</strong> ”来解决这些问题——给每个点添加影响范围与权重，让它在屏幕上平滑地摊开。</p>
+<p>👉3D高斯就是一种 Splatting 的方法。</p>
+<p><strong>辐射场（Radiance Field）</strong></p>
+<ul>
+<li>隐式辐射场：把5D坐标映射到密度&amp;颜色，在NeRF中使用。它是续可微的，但是神经网络的开销很大。</li>
+<li>显式辐射场：直接使用点云作为辐射场的骨架，每个点携带可学习的特征，在渲染时解码。它几何直观，训练快速，但只能 handle 简单的场景。</li>
+</ul>
+<p>下面要谈的3DGS巧妙地把两种方向的优点缝合了起来。</p>
+<p><em>We first introduce 3D Gaussians as a flexible and expressive scene representation.
+We start with the same input as previous NeRF-like methods, i.e.,
+cameras calibrated with Structure-from-Motion (SfM) [Snavely et al.
+2006] and initialize the set of 3D Gaussians with the sparse point
+cloud produced for free as part of the SfM process.</em></p>
+<h2 id="overview">Overview</h2>
 
 
 
