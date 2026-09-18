@@ -1727,7 +1727,7 @@ p)\big)\)</span></li>
 <p><a href="https://blog.csdn.net/qq_42415112/article/details/134351239">体渲染</a>（Volume Rendering）： 把这些离散点的颜色按不透明度从前往后加权累加，处理物体的遮挡与前后关系。</p>
 </li>
 </ul>
-<div class="arithmatex">\[\hat{C}(\mathbf{r}) = \sum_{i} T_i (1-e^{-\sigma_i\delta_i}) \mathbf{c}i  \quad T_i = e^{-\sum{j&lt;i}\sigma_j\delta_j}\]</div>
+<div class="arithmatex">\[\hat{C}(\mathbf{r}) = \sum_{i} T_i (1-e^{-\sigma_i\delta_i}) \mathbf{c}_i  \quad T_i = e^{-\sum_{j&lt;i}\sigma_j\delta_j}\]</div>
 <ul>
 <li>损失 + 优化：把渲染出的像素颜色 <span class="arithmatex">\(\hat{C}\)</span> 和真实照片颜色对比，使用反向传播调参。</li>
 </ul>
@@ -2134,7 +2134,7 @@ self.opacity_activation = torch.sigmoid
       
         <script src="../../javascripts/prefetch-images.js"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-chtml-full.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
