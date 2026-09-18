@@ -170,7 +170,7 @@ cloud produced for free as part of the SfM process.* —— Kerbl et al. 2023
 
 ### Representation
 
-#### 定义
+**定义**
 
 $$G(\mathbf{x}) = \exp\big(-\tfrac{1}{2}(\mathbf{x}- \boldsymbol{\mu})^{\top}\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu})\big)$$
 
