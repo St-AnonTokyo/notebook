@@ -12,10 +12,23 @@ nav:
       - 向量化并行计算基础: system/hpc/2.md
       - 性能分析基础: system/hpc/4.md
       - 华为昇腾异构并行程序设计: system/hpc/3.md
+  - 数学:
+    - math/index.md
+    - 概率论与数理统计:
+      - math/probability/index.md
+      - 第一章 概率论的基本概念: math/probability/1.md
+    - 数值分析:
+      - math/na/index.md
   - 计算机视觉:
     - cv/index.md
     - 3维高斯泼溅:
       - cv/3dgs/index.md
+      - 附录：The Math: cv/3dgs/math.md
+  - 人工智能:
+    - ai/index.md
+    - 人工智能初步:
+      - ai/ai_start/index.md
+      - 人工智能：回顾、现状及展望: ai/ai_start/1.md
 
 extra:
   social:
