@@ -1770,7 +1770,7 @@ cloud produced for free as part of the SfM process.</em> —— Kerbl et al. 202
 <li><span class="arithmatex">\(\Sigma\in\mathbb{R}^{3\times3}\)</span>，为协方差矩阵，决定高斯的形状和朝向（各向异性）。</li>
 <li><span class="arithmatex">\({G(\mathbf{x}) : (\mathbf{x}-\boldsymbol{\mu})^{\top}\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu}) = 1}\)</span> 是空间中以 <span class="arithmatex">\(\boldsymbol{\mu}\)</span> 为中心的一个椭球面。</li>
 </ul>
-<p>👉公式详细的数学推导请见<a href="https://st-anontokyo/github.io/notebook/cv/3dgs/math.html">附录</a>或参考<a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">维基百科关于高斯分布的介绍</a>。</p>
+<p>👉公式详细的数学推导请见<a href="https://st-anontokyo.github.io/notebook/cv/3dgs/math/">附录</a>或参考<a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">维基百科关于高斯分布的介绍</a>。</p>
 <p>🤔 形状和概率都是描述点的分布的函数，<strong>高斯分布</strong>和<strong>三维高斯球</strong>其实是同一个东西。</p>
 <h3 id="projection">Projection</h3>
 <p>有了这个 3D Gaussian 的模型，我们需要把它<strong>投影</strong>到二维（椭球 → 椭圆）才能够使用它，下面我们来介绍这种投影是如何一步步实现的。</p>
