@@ -1727,7 +1727,7 @@ p)\big)\)</span></li>
 <p><a href="https://blog.csdn.net/qq_42415112/article/details/134351239">体渲染</a>（Volume Rendering）： 把这些离散点的颜色按不透明度从前往后加权累加，处理物体的遮挡与前后关系。</p>
 </li>
 </ul>
-<div class="arithmatex">\[\hat{C}(\mathbf{r}) = \sum_{i} T_i (1-e^{-\sigma_i\delta_i}) \mathbf{c}i  \quad T_i = e^{-\sum{j&lt;i}\sigma_j\delta_j}\]</div>
+<div class="arithmatex">\[\hat{C}(\mathbf{r}) = \sum_{i} T_i (1-e^{-\sigma_i\delta_i}) \mathbf{c}_i  \quad T_i = e^{-\sum_{j&lt;i}\sigma_j\delta_j}\]</div>
 <ul>
 <li>损失 + 优化：把渲染出的像素颜色 <span class="arithmatex">\(\hat{C}\)</span> 和真实照片颜色对比，使用反向传播调参。</li>
 </ul>
@@ -1770,7 +1770,7 @@ cloud produced for free as part of the SfM process.</em> —— Kerbl et al. 202
 <li><span class="arithmatex">\(\Sigma\in\mathbb{R}^{3\times3}\)</span>，为协方差矩阵，决定高斯的形状和朝向（各向异性）。</li>
 <li><span class="arithmatex">\({G(\mathbf{x}) : (\mathbf{x}-\boldsymbol{\mu})^{\top}\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu}) = 1}\)</span> 是空间中以 <span class="arithmatex">\(\boldsymbol{\mu}\)</span> 为中心的一个椭球面。</li>
 </ul>
-<p>👉公式详细的数学推导请见<a href="https://st-anontokyo/github.io/notebook/cv/3dgs/math.html">附录</a>或参考<a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">维基百科关于高斯分布的介绍</a>。</p>
+<p>👉公式详细的数学推导请见<a href="https://st-anontokyo.github.io/notebook/cv/3dgs/math/">附录</a>或参考<a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">维基百科关于高斯分布的介绍</a>。</p>
 <p>🤔 形状和概率都是描述点的分布的函数，<strong>高斯分布</strong>和<strong>三维高斯球</strong>其实是同一个东西。</p>
 <h3 id="projection">Projection</h3>
 <p>有了这个 3D Gaussian 的模型，我们需要把它<strong>投影</strong>到二维（椭球 → 椭圆）才能够使用它，下面我们来介绍这种投影是如何一步步实现的。</p>
@@ -2134,7 +2134,7 @@ self.opacity_activation = torch.sigmoid
       
         <script src="../../javascripts/prefetch-images.js"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-chtml-full.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

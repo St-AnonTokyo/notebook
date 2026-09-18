@@ -178,7 +178,7 @@ $$G(\mathbf{x}) = \exp\big(-\tfrac{1}{2}(\mathbf{x}- \boldsymbol{\mu})^{\top}\Si
 - $\Sigma\in\mathbb{R}^{3\times3}$，为协方差矩阵，决定高斯的形状和朝向（各向异性）。
 - ${G(\mathbf{x}) : (\mathbf{x}-\boldsymbol{\mu})^{\top}\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu}) = 1}$ 是空间中以 $\boldsymbol{\mu}$ 为中心的一个椭球面。
 
-👉公式详细的数学推导请见[附录](https://st-anontokyo/github.io/notebook/cv/3dgs/math.html)或参考[维基百科关于高斯分布的介绍](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)。
+👉公式详细的数学推导请见[附录](https://st-anontokyo.github.io/notebook/cv/3dgs/math/)或参考[维基百科关于高斯分布的介绍](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)。
 
 🤔 形状和概率都是描述点的分布的函数，**高斯分布**和**三维高斯球**其实是同一个东西。
 
