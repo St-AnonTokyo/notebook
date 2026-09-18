@@ -121,7 +121,7 @@ NERF为3d重建引入了深度学习方法。
 
     - [体渲染](https://blog.csdn.net/qq_42415112/article/details/134351239)（Volume Rendering）： 把这些离散点的颜色按不透明度从前往后加权累加，处理物体的遮挡与前后关系。
 
-    $$\hat{C}(\mathbf{r}) = \sum_{i} T_i (1-e^{-\sigma_i\delta_i}) \mathbf{c}i  \quad T_i = e^{-\sum{j<i}\sigma_j\delta_j}$$
+    $$\hat{C}(\mathbf{r}) = \sum_{i} T_i (1-e^{-\sigma_i\delta_i}) \mathbf{c}_i  \quad T_i = e^{-\sum_{j<i}\sigma_j\delta_j}$$
 
     - 损失 + 优化：把渲染出的像素颜色 $\hat{C}$ 和真实照片颜色对比，使用反向传播调参。
 
