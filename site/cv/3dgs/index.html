@@ -1417,23 +1417,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Representation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        定义
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1499,7 +1482,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         协方差矩阵的分解
@@ -1510,7 +1493,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         半正定性
@@ -1521,7 +1504,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         四元数表示
@@ -1780,7 +1763,7 @@ cloud produced for free as part of the SfM process.</em> —— Kerbl et al. 202
 <p>我们拥有 SfM 得到的稀疏点云，现在，我们希望采用一种既高质量、可微又显式、快速的场景表达方法。研究者选择了3D gaussians。</p>
 <p><img alt="3dgs流程" src="img/3dgs_process.webp" /></p>
 <h3 id="representation">Representation</h3>
-<h4 id="_1">定义</h4>
+<p><strong>定义</strong></p>
 <div class="arithmatex">\[G(\mathbf{x}) = \exp\big(-\tfrac{1}{2}(\mathbf{x}- \boldsymbol{\mu})^{\top}\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu})\big)\]</div>
 <ul>
 <li><span class="arithmatex">\(\boldsymbol{\mu}\in\mathbb{R}^3\)</span>，表示均值，即高斯球的中心位置。</li>
@@ -1912,7 +1895,7 @@ cloud produced for free as part of the SfM process.</em> —— Kerbl et al. 202
 </ul>
 <p><img alt="3d高斯-&gt;椭球" src="img/gaussian_to_elipsoid.webp" title="高斯-&gt;椭球" /></p>
 <p>如果我们从椭球的几何性质出发，重新推导协方差矩阵 <span class="arithmatex">\(\Sigma\)</span> ，我们就始终能够得到半正定的协方差矩阵，这是由椭球性质决定的。</p>
-<h4 id="_2">协方差矩阵的分解</h4>
+<h4 id="_1">协方差矩阵的分解</h4>
 <details class="tip">
 <summary>详细推导</summary>
 <p><strong>(1) 出发点：椭球是单位球的线性像</strong></p>
@@ -1961,7 +1944,7 @@ s=\sin\theta\)</span>：</p>
 <p>验证两个不变量：</p>
 <div class="arithmatex">\[\mathrm{tr}(\Sigma) = a^2+b^2 = \lambda_1+\lambda_2,\qquad \det(\Sigma) = a^2b^2 = \lambda_1\lambda_2 \quad\checkmark\]</div>
 </details>
-<h4 id="_3">半正定性</h4>
+<h4 id="_2">半正定性</h4>
 <p>对任意 <span class="arithmatex">\(\mathbf{v}\in\mathbb{R}^3\)</span>：</p>
 <div class="arithmatex">\[\mathbf{v}^{\top}\Sigma\mathbf{v} = \mathbf{v}^{\top}RSS^{\top}R^{\top}\mathbf{v} =
 (S^{\top}R^{\top}\mathbf{v})^{\top}(S^{\top}R^{\top}\mathbf{v}) = \big|S^{\top}R^{\top}\mathbf{v}\big|^{2} \ge 0\]</div>
@@ -1984,7 +1967,7 @@ self.opacity_activation = torch.sigmoid
 <p>缩放因子 <span class="arithmatex">\(s\)</span> 在原始参数的基础上经 <span class="arithmatex">\(e\)</span> 的指数函数得到，于是<span class="arithmatex">\(\ s_i = e^{\text{raw}_i} &gt; 0 \text{ 永远成立}\)</span>。</p>
 <p>💡 因此 3DGS 的高斯实际上永远是严格正定的。</p>
 </details>
-<h4 id="_4">四元数表示</h4>
+<h4 id="_3">四元数表示</h4>
 <p><span class="arithmatex">\(R\)</span> 作为椭球的旋转矩阵，其列向量为特征向量，故其是正交的，满足下面的约束方程：</p>
 <div class="arithmatex">\[R^{\top}R = I \quad\]</div>
 <p>如果直接对 <span class="arithmatex">\(3\times 3\)</span>的矩阵R中的 9 个数做梯度下降，将导致 <span class="arithmatex">\(R^{\top}R \ne I\)</span> 。R不再是旋转矩阵，失去意义。</p>
@@ -2151,7 +2134,7 @@ self.opacity_activation = torch.sigmoid
       
         <script src="../../javascripts/prefetch-images.js"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-chtml-full.js"></script>
       
     
   </body>
