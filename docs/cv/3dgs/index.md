@@ -1,12 +1,12 @@
 # 3D Gaussian Splatting 入门
 
-有用资源指路：
+>有用资源指路：
 
-👉原论文电子版：[https://arxiv.org/pdf/2308.04079](https://arxiv.org/pdf/2308.04079)
+>👉原论文电子版：[https://arxiv.org/pdf/2308.04079](https://arxiv.org/pdf/2308.04079)
 
-👉论文仓库：[https://github.com/graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting)
+>👉论文仓库：[https://github.com/graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting)
 
-👉OpenCV的讲解网站：[https://learnopencv.com/3d-gaussian-splatting](https://learnopencv.com/3d-gaussian-splatting)
+>👉OpenCV的讲解网站：[https://learnopencv.com/3d-gaussian-splatting](https://learnopencv.com/3d-gaussian-splatting)
 
 本文主要基于上述资料完成，粗浅地介绍了3dgs的理论基础。
 
@@ -158,7 +158,6 @@ cloud produced for free as part of the SfM process.* —— Kerbl et al. 2023
 
 - 3D Gaussians representation & projection
 - Optimizing Gaussians to accurately capture the scene.
-- Adaptive density control of 3D Gaussians
 - Rendering 3D Gaussians onto a 2D image plane.
 - Leveraging Spherical Harmonics to make 3DGS view-dependent.
 
@@ -178,7 +177,7 @@ $$G(\mathbf{x}) = \exp\big(-\tfrac{1}{2}(\mathbf{x}- \boldsymbol{\mu})^{\top}\Si
 - $\Sigma\in\mathbb{R}^{3\times3}$，为协方差矩阵，决定高斯的形状和朝向（各向异性）。
 - ${G(\mathbf{x}) : (\mathbf{x}-\boldsymbol{\mu})^{\top}\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu}) = 1}$ 是空间中以 $\boldsymbol{\mu}$ 为中心的一个椭球面。
 
-👉公式详细的数学推导请见[附录](https://st-anontokyo.github.io/notebook/cv/3dgs/math/)或参考[维基百科关于高斯分布的介绍](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)。
+👉公式详细的数学推导可见于[附录](https://st-anontokyo.github.io/notebook/cv/3dgs/math/)或参考[维基百科关于高斯分布的介绍](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)。
 
 🤔 形状和概率都是描述点的分布的函数，**高斯分布**和**三维高斯球**其实是同一个东西。
 
@@ -188,7 +187,7 @@ $$G(\mathbf{x}) = \exp\big(-\tfrac{1}{2}(\mathbf{x}- \boldsymbol{\mu})^{\top}\Si
 
 ![rendering pipeline](img/rendering_pipeline.webp "rendering pipeline")
 
-<center style="font-size:14px;color:#C0C0C0">*Forward Rendering Pipeline from Paper EWA Volume Splatting*</center> 
+*<center style="font-size:14px;color:#C0C0C0">Forward Rendering Pipeline from Paper EWA Volume Splatting</center>*
 
 
 
@@ -478,7 +477,7 @@ $$\mathbf{v}^{\top}\Sigma\mathbf{v} = \mathbf{v}^{\top}RSS^{\top}R^{\top}\mathbf
     上面的证明只给出半正定。要严格正定，需要 $S^{\top}R^{\top}\mathbf{v}\ne\mathbf{0}$ 对所有 $\mathbf{v}\ne\mathbf{0}$，即 $S$ 和 $R$
     都可逆，也就是 $s_i \ne 0$。
 
-    在 3DGS 中，研究者使用自然常熟激活来保持正定性：
+    在 3DGS 中，研究者使用自然常数激活来保持正定性：
 
         self.scaling_activation = torch.exp       # s = exp(原始参数)
         self.opacity_activation = torch.sigmoid
@@ -534,7 +533,7 @@ $$R = \begin{bmatrix}
     2(q_x q_z-q_w q_y) & 2(q_y q_z+q_w q_x) & 1-2(q_x^2+q_y^2)
     \end{bmatrix}$$
 
-👉 推荐阅读 [知乎：四元数和旋转(Quaternion & rotation)
+👉 推荐阅读知乎文章： [四元数和旋转(Quaternion & rotation)
 ](https://www.zhihu.com/tardis/zm/art/78987582?source_id=1003)
 
 ???+ abstract "为什么使用四元数？"
@@ -543,11 +542,105 @@ $$R = \begin{bmatrix}
     
     当误差累积导致模长偏离 1 时，只需要除以它的模长来归一化即可。对比参数化前，要保持 $R$ 的正交性，需定期对其正交化，耗费大量计算资源，这是一个极其廉价且高效的操作。
 
-    除了约束处理之外，四元数还有很多好的数学性质可以便于训练，如球面线性插值、无奇异点等，但理解它们需要很多比较深奥的前置数学知识（如拓扑学、李群等）。我搞得不是很懂，就不写上来了😭。
+    除了约束处理之外，四元数还有很多好的数学性质可以便于训练，如球面线性插值、无奇异点等，但理解它们需要很多比较深奥的前置数学知识（如拓扑学、李群等）。我自己搞得不是很明白，就不写上来了😭。
 
 总之，研究者在实际训练的时候，调参调的就是这个用四元数参数化的旋转矩阵。
 
 ## Optimization
 
-下面正式介绍如何优化 3D Gaussian 。
+下面正式介绍如何优化 3D Gaussian ，这是整篇论文的重点。
+
+![3dgs优化过程](img/optimization.webp "3dgs优化过程")
+
+*<center style="font-size:14px;color:#C0C0C0">图源:原论文 figure.2.</center>*
+
+优化流程以 SfM 得到的稀疏点云和相机位姿及位姿处拍摄的照片作为输入，每个点都被用于初始化 3D gaussians。在空间的其它位置，还会随机生成更多 gaussians，我们会采用 Adaptive Density control 来“裁剪”这些 gaussians。然后，我们将高斯球投影到某个相机位姿下的 2D 平面上，并渲染出来。渲染后将其与原图对比，计算损失函数以进一步调参，这是优化真正发生的地方。
+
+### Stochastic Gradient Descent
+
+研究者在优化中采用了[随机梯度下降的 Adam 算法](https://zhuanlan.zhihu.com/p/425792966)。
+
+#### Loss Function
+
+定义损失函数如下：
+
+$$\mathcal{L} = (1-\lambda)\mathcal{L}_1 + \lambda \mathcal{L}_{\text{D-SSIM}}, \qquad \lambda = 0.2$$
+
+其中
+
+- $\mathcal{L}_1 = \big|\hat{I} - I\big|_1$ 是逐像素差的绝对值。
+- [$\operatorname {SSIM}$ 指标](https://zhuanlan.zhihu.com/p/399215180)用来衡量照片的亮度 $l$ 、对比度 $c$ 和结构 $s$ 。
+
+**SSIM指标**
+
+$$\mathrm{SSIM}(x,y)=l(x,y)^{\alpha}\cdot c(x,y)^{\beta}\cdot s(x,y)^{\gamma}$$
+
+
+$$l(x, y) = \frac{2\mu_x\mu_y + c_1}{\mu_x^2 + \mu_y^2 + c_1} \quad c(x, y) = \frac{2\sigma_x\sigma_y + c_2}{\sigma_x^2 + \sigma_y^2 + c_2} \quad s(x, y) = \frac{\sigma_{xy} + c_3}{\sigma_x\sigma_y + c_3}$$
+
+其中
+
+- $\mu_x$: $x$ 的像素样本均值；
+- $\mu_y$: $y$ 的像素样本均值；
+- $\sigma_x^2$: $x$ 的方差；
+- $\sigma_y^2$: $y$ 的方差；
+- $\sigma_{xy}$: $x$ 和 $y$ 的协方差；
+- $c_1 = (k_1 L)^2, c_2 = (k_2 L)^2, c_3 = c_2/2$: 这两个变量用于稳定分母较小的除法运算（防止值超出计算机表达边界）；
+- $L$: 像素值的动态范围（最大 - 最小）；
+- 默认 $k_1 = 0.01, k_2 = 0.03$ 。
+
+👉 SSIM loss 取值范围是 [-1, 1] ，两张照片越相似，其值越大（相同为 1 ）。为了适应损失函数取最小的原则，使用 D-SSIM： $\mathcal{L}_{\text{D-SSIM}} = 1 - \operatorname{SSIM}(\hat{I}, I)$。
+
+???+ note "与 NeRF 的对比"
+
+    MSE loss 就是典型的均方误差，计算像素的绝对差值，平方后加权求和。
+
+    - NeRF 每次迭代通常随机采样一批射线，每条射线对应一个像素，然后只对这些像素算 MSE loss。但 SSIM 要用一个 2D 邻域内的像素信息来计算均值、方差、协方差等。NeRF 随机采样的射线彼此不一定相邻，无法应用 SSIM 指标。
+    - 3DGS 的 gaussians 是覆盖全局的，因此损失函数可以以 MSE 为主，SSIM 为辅。
+
+#### Learnable Parameters
+
+梯度下降尝试优化以下四组可学习的参数：
+
+- Gaussian 的位姿 $M$（位置 $\boldsymbol{\mu}$ + 四元数表示的朝向 $\mathbf{q}$）
+- 协方差矩阵的分解矩阵 $S$
+- 球谐（**SH**）函数的参数，表达颜色 $C$ （下面会讲）
+- 不透明度 $\alpha$
+
+👉 协方差矩阵 $\Sigma$ 由 $S$ 和 $\mathbf{q}$ 合成（$\Sigma = R,S,S^{\top}R^{\top}, R = R(\mathbf{q})$）。
+
+???+ info "激活函数"
+
+    为了保证参数的合法性，这几个无约束的优化变量需要通过相应的激活函数来映射到合法参数。
+
+    | 参数 | 约束 | 激活 |
+    |:----:|:---:|:----:|
+    | $S$ | 半轴长需 $>0$ | $s = e^{\text{raw}}$，恒正 |
+    | $\alpha$ | 不透明度 $\in(0,1)$ | 使用[Sigmoid函数](https://blog.csdn.net/hy592070616/article/details/120617176)：$\alpha = \text{sigmoid}(\text{raw})$ |
+    | $\mathbf{q}$ | 必须是**单位**四元数 | 归一化 |
+
+#### More on Gradient Descent
+
+请注意，整个梯度下降的优化发生在最后的 2D 坐标系中，因此我们所调参的协方差矩阵 $\Sigma$ 最终服务于 $\Sigma'$ 的优化。而我们已经知道，$s$ 和 $\mathbf q$ 是 $\Sigma$ 的隐式参数，因此在计算梯度的时候，需要用到链式法则。
+
+$$\frac{\partial L}{\partial q} = \frac{\partial L}{\partial \Sigma'} \cdot \frac{\partial \Sigma'}{\partial q} \quad ; \quad \frac{\partial \Sigma'}{\partial q} = \frac{\partial \Sigma'}{\partial \Sigma} \frac{\partial \Sigma}{\partial q}$$
+
+$\frac{\partial \Sigma}{\partial s}​$ 反映了 $\Sigma$ 如何随着拉伸参数 $s$ 改变而改变。
+
+$$\frac{\partial L}{\partial s} = \frac{\partial L}{\partial \Sigma'} \cdot \frac{\partial \Sigma'}{\partial s} \quad ; \quad \frac{\partial \Sigma'}{\partial s} = \frac{\partial \Sigma'}{\partial \Sigma} \frac{\partial \Sigma}{\partial s}$$
+
+$\frac{\partial \Sigma}{\partial q}​$ 反映了 $\Sigma$ 如何随着旋转参数 $\mathbf{q}$ 改变而改变。
+
+💡 直接计算$\frac{\partial \Sigma}{\partial s}​$ 和 $\frac{\partial \Sigma}{\partial q}​$ 可以快速计算出 scaling 和 rotating 的梯度，允许了高效的反向传播（这两个梯度存在闭式解，$s$ 和 $\mathbf q$ 改变后不需要重新推导梯度，只需代入闭式解的公式即可）.
+
+???+ note "小结"
+
+    与 NeRF 优化神经网络权重不同，在 3DGS 里，我们优化的是场景本身（每个高斯的参数）。研究者把显示的几何语言当作可学习参数直接做梯度下降，这得益于整条高斯优化 pipeline 的可微性。
+
+    $$\frac{\partial \mathcal{L}}{\partial \boldsymbol{\mu}},\ \frac{\partial \mathcal{L}}{\partial S},\ \frac{\partial
+    \mathcal{L}}{\partial \mathbf{q}},\ \frac{\partial \mathcal{L}}{\partial \alpha},\ \frac{\partial \mathcal{L}}{\partial \text{SH}}$$
+
+理解了整条 optimization pipeline 的基本流程，我们就可以深入一个问题——
+
+### Adaptive Density Control
 

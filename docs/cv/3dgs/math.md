@@ -4,7 +4,7 @@
 
 ---
 
-## 代数推导
+## 3D Gaussian 代数推导
 
 从一维出发逐步推广到 d 维的**高斯分布**表达式。
 
@@ -55,7 +55,7 @@ $$\mathbf{X}\sim\mathcal{N}(\boldsymbol{\mu},\Sigma)$$
 
 👉实际上，指数就是所谓[马氏距离](https://zhuanlan.zhihu.com/p/46626607)的平方 $\Delta^2 = (\mathbf{x}-\boldsymbol{\mu})^{\top}\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu})$ ，用来给空间分配恰当的权重。它修正了欧氏距离各个维度尺度不一致的问题。
 
-## 几何形状
+## 3D Gaussian 几何形状
 
 高维高斯分布一般描述的是椭球面，这是由公式性质造成的,我们可以把它转变成我们更熟悉的椭球形式。
 
@@ -94,8 +94,4 @@ $$\boxed{\ \sum_i \left(\frac{y_i}{\sqrt{c,\lambda_i}}\right)^2 = 1\ }$$
 |椭球中心|$\boldsymbol{\mu}$|
 |半轴方向|$Q$ 的列 / $\Sigma$ 的特征向量|
 |半轴长度|$\sqrt{c\lambda_i}$ = $\sqrt{c}\cdot\sqrt{\textbf{特征值}}$|
-
-## 适用 3DGS 的数学性质
-
-研究者之所以选择这个模型，是因为它有一些好的数学性质，在训练中对其参数化会非常方便。
 
