@@ -23,6 +23,8 @@ nav:
     - cv/index.md
     - 3维高斯泼溅:
       - cv/3dgs/index.md
+      - 理论: cv/3dgs/theory.md
+      - 实践: cv/3dgs/practice.md
       - 附录：The Math: cv/3dgs/math.md
   - 人工智能:
     - ai/index.md
