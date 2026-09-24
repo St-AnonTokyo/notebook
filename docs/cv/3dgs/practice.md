@@ -9,7 +9,7 @@
 
 整个流程大致如下：
 
-![training pipeline](img/training_pipeline.png "训练流程")
+![training pipeline](img/training_pipeline.webp "训练流程")
 
 *<center style="font-size:14px;color:#C0C0C0">AI生成</center>*
 
@@ -27,27 +27,12 @@
 <table align="center" style="border: none;">
   <tr>
     <td align="center" style="border: none; padding: 0 5px;">
-      <img src="../img/r_3.png" width="100%">
+      <img src="../img/r_3.webp" width="100%">
       <br>
       <span style="font-size: 12px; color: #666;"></span>
     </td>
     <td align="center" style="border: none; padding: 0 5px;">
-      <img src="../img/00003.png" width="100%">
-      <br>
-      <span style="font-size: 12px; color: #666;"></span>
-    </td>
-  </tr>
-</table>
-
-<table align="center" style="border: none;">
-  <tr>
-    <td align="center" style="border: none; padding: 0 5px;">
-      <img src="../img/r_13.png" width="100%">
-      <br>
-      <span style="font-size: 12px; color: #666;"></span>
-    </td>
-    <td align="center" style="border: none; padding: 0 5px;">
-      <img src="../img/00013.png" width="100%">
+      <img src="../img/00003.webp" width="100%">
       <br>
       <span style="font-size: 12px; color: #666;"></span>
     </td>
@@ -57,12 +42,27 @@
 <table align="center" style="border: none;">
   <tr>
     <td align="center" style="border: none; padding: 0 5px;">
-      <img src="../img/r_82.png" width="100%">
+      <img src="../img/r_13.webp" width="100%">
+      <br>
+      <span style="font-size: 12px; color: #666;"></span>
+    </td>
+    <td align="center" style="border: none; padding: 0 5px;">
+      <img src="../img/00013.webp" width="100%">
+      <br>
+      <span style="font-size: 12px; color: #666;"></span>
+    </td>
+  </tr>
+</table>
+
+<table align="center" style="border: none;">
+  <tr>
+    <td align="center" style="border: none; padding: 0 5px;">
+      <img src="../img/r_82.webp" width="100%">
       <br>
       <span style="font-size: 12px; color: #666;">原图</span>
     </td>
     <td align="center" style="border: none; padding: 0 5px;">
-      <img src="../img/00082.png" width="100%">
+      <img src="../img/00082.webp" width="100%">
       <br>
       <span style="font-size: 12px; color: #666;">3dgs渲染</span>
     </td>

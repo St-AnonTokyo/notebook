@@ -158,8 +158,7 @@ cloud produced for free as part of the SfM process.* —— Kerbl et al. 2023
 
 - 3D Gaussians representation & projection
 - Optimizing Gaussians to accurately capture the scene.
-- Rendering 3D Gaussians onto a 2D image plane.
-- Leveraging Spherical Harmonics to make 3DGS view-dependent.
+- Finally Rendering 3D Gaussians onto a 2D image plane.
 
 ##  Differentiable 3D Gaussian Splatting
 
