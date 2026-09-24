@@ -2,82 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://st-anontokyo.github.io/notebook/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/ai/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/ai/ai_start/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/ai/ai_start/1/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://st-anontokyo.github.io/notebook/algorithm/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://st-anontokyo.github.io/notebook/algorithm/ads/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://st-anontokyo.github.io/notebook/algorithm/ads/1/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/cv/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/cv/3dgs/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/cv/3dgs/math/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/cv/3dgs/practice/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/cv/3dgs/theory/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/math/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/math/na/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/math/na/1/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/math/probability/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/math/probability/1/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/system/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://st-anontokyo.github.io/notebook/system/co/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/system/hpc/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/system/hpc/1/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/system/hpc/2/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/system/hpc/3/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
          <loc>https://st-anontokyo.github.io/notebook/system/hpc/4/</loc>
-         <lastmod>2026-09-23</lastmod>
+         <lastmod>2026-09-24</lastmod>
     </url>
 </urlset>
