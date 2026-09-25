@@ -1420,6 +1420,67 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
+        经验杂谈
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经验杂谈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        拍摄
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据准备
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        训练参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        问题诊断
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         效果演示
       
     </span>
@@ -1429,10 +1490,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指标评测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        场景1：卡车玩具（官方仓库提供的一个数据集）
+        场景1：乐高玩具（官方仓库提供的一个数据集）
       
     </span>
   </a>
@@ -1747,6 +1819,67 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
+        经验杂谈
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经验杂谈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        拍摄
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据准备
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        训练参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        问题诊断
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         效果演示
       
     </span>
@@ -1756,10 +1889,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指标评测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        场景1：卡车玩具（官方仓库提供的一个数据集）
+        场景1：乐高玩具（官方仓库提供的一个数据集）
       
     </span>
   </a>
@@ -1900,12 +2044,112 @@ OpenCV：<a href="https://learnopencv.com/3d-gaussian-splatting/">https://learno
 <p>整个流程大致如下：</p>
 <p><img alt="training pipeline" src="../img/training_pipeline.webp" title="训练流程" /></p>
 <p><em><center style="font-size:14px;color:#C0C0C0">AI生成</center></em></p>
-<p>具体的工具依赖、环境配置、代码和可调节参数，请参考官方仓库。</p>
-<h2 id="_2">效果演示</h2>
+<p>更具体的工具依赖、环境配置、代码和可调节参数，请参考官方仓库。</p>
+<h2 id="_2">经验杂谈</h2>
+<h3 id="_3">拍摄</h3>
+<p><strong>拍摄角度和姿势</strong></p>
+<ul>
+<li>单个物体：拿相机围着物体走三圈，每走半步拍一张照片，分别获取在胸口/腰部平视、举到头顶俯视、放在大腿仰视这三个角度的图片，物体最好占图片的80%以上。</li>
+<li>复杂场景：同样拿着相机沿场景边缘走三圈，同上。不同的是不要给场景中的单个物体拍特写，并且角落/转弯处/场景衔接处要多角度拍几张。</li>
+<li>相机的旋转不要过多，必须要有平移。</li>
+</ul>
+<blockquote>
+<p>数量参考：一个西瓜大小的玩偶我拍了大概70多张照片，跨度十几米的房间我用了130多张照片。</p>
+</blockquote>
+<p><strong>变焦</strong></p>
+<p>相机拍摄过程中最好不要变焦，保持相同的焦距和分辨率、使用同一个设备。</p>
+<blockquote>
+<p>convert.py 硬编码了 --ImageReader.single_camera 1，假设所有照片共用一套内参，变焦后焦距会变。
+这时即便 SfM 靠场景匹配成功、高斯数量达标，重建也会失败。</p>
+</blockquote>
+<p>可以在<code>convert.py</code>里做修改： <code>--ImageReader.single_camera 0</code>，但实测效果提升不大。</p>
+<p><strong>采光</strong></p>
+<p>拍物体要选有方向的光（早晚的侧光），尤其不要在阴天拍深色物体。</p>
+<blockquote>
+<p>深色物体在漫反射下没有明暗变化，模型无法识别出纹理的细节。</p>
+</blockquote>
+<p><strong>多尺度混合</strong></p>
+<p>如果同一场景中混合了近物和远景，两种尺度相互干扰，整体效果会很差。拍摄单物体时其在画面中的占比要足够大，给出足够的细节。</p>
+<h3 id="_4">数据准备</h3>
+<p><strong>分辨率</strong></p>
+<p>需要把原图压缩到合适的分辨率（如1600px）。</p>
+<blockquote>
+<p>COLMAP 能处理的像素尺度在 1 - 2 Mp。</p>
+<p>如果原图的尺寸和分辨率过大，图中的噪声、镜头的畸变也会被放大，COLMAP 的特征识别很容易出现问题，导致初始 SfM 点云有大量漂浮物(floater)/错位点。依赖初始点云的 3dgs 自然失败。</p>
+</blockquote>
+<p><strong>图片格式</strong></p>
+<p>苹果手机直接拍摄的 HEIC 照片格式无法被 COLMAP 读取，需要进行格式转换。</p>
+<h3 id="_5">训练参数</h3>
+<p><strong>分辨率设置</strong></p>
+<p>在训练中使用 <code>-r [参数]</code> 也可以对训练使用的原图分辨率（梯度下降时与渲染图对比）进行缩放，参数是压缩的比例。（如：<code>-r 1</code> 直接使用原图分辨率，<code>-r 2</code> 将原图分辨率除以 2）</p>
+<blockquote>
+<p>需要注意的是，如果使用较高的分辨率做训练，需要同时把高斯致密化的参数调高，否则没有足够多的高斯来拟合大量的像素。</p>
+</blockquote>
+<ul>
+<li>trade-off：rasterization 这步要训练的像素数会随分辨率提高而增长。如果机器的显存有限，高分辨率可能会挤占存储高斯要用的显存，导致分辨率提高后高斯数反而降低。</li>
+</ul>
+<p><strong>学习率</strong></p>
+<p>调节学习率的时候需要小心。如果调低尺度学习率 <code>--scaling_lr</code>，高斯的尺度变化会更平缓，虽然也许能够捕获更多细节，但是有很大的密度风险。如果高斯的尺度始终低于 split 的阈值，这会导致高斯异常稀疏。</p>
+<p>此外，大场景还存在一个隐性致密化问题（split 阈值 = 本值 × 场景半径），如果场景尺度较大，大部分高斯可能永远不会分裂，density control 也就无效了。</p>
+<h3 id="_6">问题诊断</h3>
+<p><strong>检测指标</strong></p>
+<p>在训练中要判断是否出错，我们不能只看 loss 函数是否趋于 0，因为你不知道它是怎么达到 0 的，代码可能会为了降 loss 而强行调参。</p>
+<p>我们主要从这两个指标进行分析：</p>
+<ul>
+<li>PSNR指标：来自 MSE ，反映像素的绝对差。</li>
+</ul>
+<div class="arithmatex">\[MSE = \frac{1}{mn} \sum_{i=0}^{m-1} \sum_{j=0}^{n-1} [I(i,j) - K(i,j)]^2\]</div>
+<div class="arithmatex">\[PSNR = 10 \cdot \log_{10}\left( \frac{\mathrm{MAX}_I^2}{MSE} \right)\]</div>
+<ul>
+<li>SSIM指标：反映更复杂的几何/光影（亮度、对比度、结构），“理论”中有。</li>
+</ul>
+<p>通过比对<strong>训练中</strong>定期评估的指标值和训练结束后测试得到的指标值之间的差值，我们可以定位问题出现的位置。</p>
+<p><strong>肉眼检测</strong></p>
+<p>通过 SIBR 等查看器观看训练后的模型，考察场景具体哪里存在问题。如空中“飘絮”(floater，表明透明的高斯数量很多)；大场景里的物体乱成一团（大概率是尺度混合的问题）；走近能清晰观察到物体上的高斯球（拍摄细节不够或训练高斯密度不够，导致高斯球过大）······</p>
+<h2 id="_7">效果演示</h2>
+<p>我一共训练了四个场景的模型，将每个场景效果最好的一轮模型展示在这里。</p>
+<h3 id="_8">指标评测</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">场景</th>
+<th style="text-align: center;">PSNR</th>
+<th style="text-align: center;">SSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">lego</td>
+<td style="text-align: center;">35.93</td>
+<td style="text-align: center;">0.983</td>
+</tr>
+<tr>
+<td style="text-align: center;">房间</td>
+<td style="text-align: center;">21.70</td>
+<td style="text-align: center;">0.842</td>
+</tr>
+<tr>
+<td style="text-align: center;">玩偶</td>
+<td style="text-align: center;">17.84</td>
+<td style="text-align: center;">0.638</td>
+</tr>
+<tr>
+<td style="text-align: center;">铜像</td>
+<td style="text-align: center;">16.85</td>
+<td style="text-align: center;">0.473</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参照</strong> （Ours- 30K 那一行）</p>
+<p><img alt="table1" src="../img/table1.webp" title="table1" /></p>
+<p><img alt="table2" src="../img/table2.webp" title="table2" /></p>
+<p><em><center style="font-size:14px;color:#C0C0C0">图源：原论文table.1.&amp;table.2.</center></em></p>
 <div class="admonition bug">
-<p>整体来看，我的模型的渲染效果不如原论文，原因主要在于我的拍摄设备和水平都比较差。如果能有一个好的相机，并能精心设计拍摄的角度、准备充足的照片，结果大概能好很多。</p>
+<p class="admonition-title">评估</p>
+<p>整体来看，除了 lego ，我的模型渲染效果都没有达到原论文的平均标准。原因主要在于我的拍摄设备和水平都比较差（除了 lego 的输入图片都是我自己拍的）。如果能有一个好的相机，并能精心设计拍摄的角度、准备充足的照片，结果大概能好很多。</p>
+<p>过程中我失败的经验教训也都写在前文了。</p>
 </div>
-<h3 id="1">场景1：卡车玩具（官方仓库提供的一个数据集）</h3>
+<h3 id="1">场景1：乐高玩具（官方仓库提供的一个数据集）</h3>
 <table align="center" style="border: none;">
   <tr>
     <td align="center" style="border: none; padding: 0 5px;">
