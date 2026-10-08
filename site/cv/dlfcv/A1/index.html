@@ -143,7 +143,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#assignment-1" class="md-skip">
+        <a href="#assignment-1pytorch-basics-knn-classifier" class="md-skip">
           跳转至
         </a>
       
@@ -1488,6 +1488,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1504,6 +1522,520 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyTorch 基本语法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PyTorch 基本语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-tensor-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Tensor Basics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Tensor Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 创建、访问与形状
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 张量构造函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tensor-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Tensor Indexing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tensor Indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 切片索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 整数数组索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 布尔索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-reshaping-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Reshaping Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Reshaping Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 交换轴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-reshape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 连续性与 Reshape
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tensor-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Tensor Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Tensor Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 逐元素运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 归约运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 向量与矩阵运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-broadcasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Broadcasting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Broadcasting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 广播规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 原地操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-running-on-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Running on GPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Challenge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Challenge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 各不等长张量的均值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 不同数值及首次出现位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kNN 分类器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="kNN 分类器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        距离计算函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="距离计算函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-loops-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        two loops implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-loop-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        one loop implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-loop-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        no loop implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        预测函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="预测函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kNN 类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="kNN 类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        k 的选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        整体框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最终评测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1722,6 +2254,509 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyTorch 基本语法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PyTorch 基本语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-tensor-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Tensor Basics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Tensor Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 创建、访问与形状
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 张量构造函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tensor-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Tensor Indexing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tensor Indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 切片索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 整数数组索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 布尔索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-reshaping-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Reshaping Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Reshaping Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 交换轴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-reshape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 连续性与 Reshape
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tensor-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Tensor Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Tensor Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 逐元素运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 归约运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 向量与矩阵运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-broadcasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Broadcasting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Broadcasting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 广播规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 原地操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-running-on-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Running on GPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Challenge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Challenge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 各不等长张量的均值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 不同数值及首次出现位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kNN 分类器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="kNN 分类器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        距离计算函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="距离计算函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-loops-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        two loops implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-loop-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        one loop implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-loop-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        no loop implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        预测函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="预测函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kNN 类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="kNN 类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        k 的选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        整体框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最终评测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1806,20 +2841,1209 @@
   
 
 
-<h1 id="assignment-1">Assignment 1</h1>
+<h1 id="assignment-1pytorch-basics-knn-classifier">Assignment 1：Pytorch Basics &amp; kNN Classifier</h1>
 <p>A1 includes 2 questions:</p>
 <p><strong>Q1: PyTorch 101</strong>. Walk you through the basics of working with tensors in PyTorch.</p>
 <p><strong>Q2: k-Nearest Neighbor classifier</strong>. Walk you through implementing a kNN classifier. </p>
-<p><strong>The goals</strong>:</p>
-<ul>
-<li>Develop proficiency with PyTorch tensors</li>
-<li>Gain experience using notebooks on Google Colab</li>
-<li>Understand the basic Image Classification pipeline and the data-driven approach (train/predict stages)</li>
-<li>Understand the train/val/test splits and the use of validation data for hyperparameter tuning</li>
-<li>Implement and apply a k-Nearest Neighbor (kNN) classifier</li>
-<li>Learn how to test your implementation on Autograder</li>
-</ul>
+<blockquote>
+<p>这里整理了一些常用的 pytorch 语法和我做 assignment 的 debug 经历。</p>
+</blockquote>
 <hr />
+<h2 id="pytorch">PyTorch 基本语法</h2>
+<blockquote>
+<p>本文关于pytorch语法的一些阐述较为简略，要了解更多信息请参考<a href="https://docs.pytorch.org/docs/2.14/torch.html">这个工具书</a>。</p>
+</blockquote>
+<h3 id="1-tensor-basics">1. Tensor Basics</h3>
+<h4 id="11">1.1 创建、访问与形状</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import torch</code>、<code>torch.__version__</code></td>
+<td>导入 PyTorch、查看版本</td>
+</tr>
+<tr>
+<td><code>torch.tensor(data)</code></td>
+<td>从列表或嵌套列表创建张量</td>
+</tr>
+<tr>
+<td><code>x.dim()</code>、<code>x.ndim</code></td>
+<td>维度数量（rank）</td>
+</tr>
+<tr>
+<td><code>x.shape</code>、<code>x.size()</code></td>
+<td>各维度大小；<code>x.size(d)</code> 获取第 <code>d</code> 维大小</td>
+</tr>
+<tr>
+<td><code>x[i]</code>、<code>x[i, j]</code></td>
+<td>取元素；下标从 0 开始，结果仍是 Tensor</td>
+</tr>
+<tr>
+<td><code>x[i, j] = value</code></td>
+<td>原地修改元素</td>
+</tr>
+<tr>
+<td><code>x.item()</code></td>
+<td>将单元素 Tensor 转为 Python 标量</td>
+</tr>
+<tr>
+<td><code>x.tolist()</code></td>
+<td>Tensor 转为 Python 标量或嵌套列表</td>
+</tr>
+<tr>
+<td><code>torch.is_tensor(x)</code></td>
+<td>判断是否为 Tensor</td>
+</tr>
+</tbody>
+</table>
+<h4 id="12">1.2 张量构造函数</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>torch.zeros(M, N)</code></td>
+<td>全 0</td>
+</tr>
+<tr>
+<td><code>torch.ones(M, N)</code></td>
+<td>全 1</td>
+</tr>
+<tr>
+<td><code>torch.eye(n)</code></td>
+<td>单位矩阵</td>
+</tr>
+<tr>
+<td><code>torch.rand(M, N)</code></td>
+<td><code>[0, 1)</code> 均匀分布随机数</td>
+</tr>
+<tr>
+<td><code>torch.randn(M, N)</code></td>
+<td>标准正态分布随机数</td>
+</tr>
+<tr>
+<td><code>torch.full((M, N), fill_value=v)</code></td>
+<td>指定形状，值全部填为 <code>v</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="13">1.3 数据类型</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x.dtype</code></td>
+<td>查看元素类型</td>
+</tr>
+<tr>
+<td><code>torch.tensor(data, dtype=...)</code></td>
+<td>创建时指定类型</td>
+</tr>
+<tr>
+<td><code>x.to(dtype)</code></td>
+<td>转换类型</td>
+</tr>
+<tr>
+<td><code>x.float()</code>、<code>x.double()</code>、<code>x.long()</code></td>
+<td>转为 <code>float32</code>、<code>float64</code>、<code>int64</code></td>
+</tr>
+<tr>
+<td><code>torch.zeros_like(x)</code></td>
+<td>与 <code>x</code> 同形状、同类型、同设备的全 0 张量</td>
+</tr>
+<tr>
+<td><code>x.new_zeros(M, N)</code></td>
+<td>指定新形状，继承 <code>x</code> 的类型和设备</td>
+</tr>
+<tr>
+<td><code>x.to(other)</code></td>
+<td>匹配另一个 Tensor 的类型和设备</td>
+</tr>
+<tr>
+<td><code>torch.arange(start, end, step, dtype=...)</code></td>
+<td>等差数列，包含 <code>start</code>，不包含 <code>end</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>常用数据类型：<code>float32</code>（计算）、<code>float64</code>（双精度）、<code>int64</code>（整数／索引）、<code>bool</code>（掩码）、<code>float16</code>（半精度）；另有 <code>int16</code>、<code>int32</code>、<code>uint8</code>。</li>
+</ul>
+<h3 id="2-tensor-indexing">2. Tensor Indexing</h3>
+<h4 id="21">2.1 切片索引</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x[start:stop:step]</code></td>
+<td>左闭右开，默认步长为 1</td>
+</tr>
+<tr>
+<td><code>x[:k]</code>、<code>x[k:]</code>、<code>x[:]</code></td>
+<td>前 <code>k</code> 项、从 <code>k</code> 起、全部</td>
+</tr>
+<tr>
+<td><code>x[-1]</code>、<code>x[:-1]</code></td>
+<td>最后一项、排除最后一项</td>
+</tr>
+<tr>
+<td><code>x[::2]</code></td>
+<td>每隔一项取一项</td>
+</tr>
+<tr>
+<td><code>x[i, :]</code>、<code>x[i]</code></td>
+<td>第 <code>i</code> 行，整数索引会去掉该维度</td>
+</tr>
+<tr>
+<td><code>x[i:i+1, :]</code></td>
+<td>单行切片，保留该维度</td>
+</tr>
+<tr>
+<td><code>x[:, j:j+1]</code></td>
+<td>单列切片，保留形状 <code>(M, 1)</code></td>
+</tr>
+<tr>
+<td><code>x[:2, :3]</code></td>
+<td>前两行、前三列</td>
+</tr>
+<tr>
+<td><code>x[::2, 1::2]</code></td>
+<td>偶数下标行、奇数下标列</td>
+</tr>
+<tr>
+<td><code>x.clone()</code></td>
+<td>复制数据，修改副本不影响原张量</td>
+</tr>
+<tr>
+<td><code>x[:, :2] = v</code></td>
+<td>原地给切片赋值；右侧可为标量或形状兼容的 Tensor</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>基本切片返回共享数据的 <strong>view</strong>，修改切片会影响原张量。需要独立数据时要 <code>clone()</code>。</li>
+</ul>
+<h4 id="22">2.2 整数数组索引</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x[rows]</code>、<code>x[:, cols]</code></td>
+<td>按指定顺序选行／列，可重复；索引可用整数列表或 <code>int64</code> Tensor</td>
+</tr>
+<tr>
+<td><code>x[rows, cols]</code></td>
+<td>等长一维索引逐对取元素：第 <code>k</code> 项为 <code>x[rows[k], cols[k]]</code></td>
+</tr>
+<tr>
+<td><code>x[rows, cols] = v</code></td>
+<td>原地修改指定位置</td>
+</tr>
+<tr>
+<td><code>torch.arange(n)</code></td>
+<td>创建索引 <code>0, 1, ..., n - 1</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>整数数组索引读取返回新数据，通常无需再 <code>clone()</code>。</li>
+<li>索引赋值仍会修改原张量。</li>
+</ul>
+<h4 id="23">2.3 布尔索引</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mask = x &gt; 0</code></td>
+<td>逐元素比较，得到同形状 <code>bool</code> Tensor</td>
+</tr>
+<tr>
+<td><code>x[mask]</code></td>
+<td>同形状掩码筛选出真值位置，结果是一维 Tensor</td>
+</tr>
+<tr>
+<td><code>x[x &lt;= 3] = 0</code></td>
+<td>原地修改满足条件的元素</td>
+</tr>
+<tr>
+<td><code>torch.manual_seed(seed)</code></td>
+<td>设置随机种子，便于复现随机测试</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-reshaping-operations">3. Reshaping Operations</h3>
+<h4 id="31-view">3.1 View</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x.view(M, N)</code></td>
+<td>在元素总数不变的前提下改变形状，共享原数据</td>
+</tr>
+<tr>
+<td><code>x.view(-1)</code></td>
+<td>展平为一维</td>
+</tr>
+<tr>
+<td><code>x.view(1, -1)</code>、<code>x.view(-1, 1)</code></td>
+<td>转为二维行向量／列向量</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>-1</code> 表示自动推断该维大小，一次最多使用一个。</li>
+<li>改变形状不会交换轴，因为<code>.view()</code>始终按维度顺序读取，因此不能直接实现矩阵转置。</li>
+</ul>
+<h4 id="32">3.2 交换轴</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x.t()</code>、<code>torch.t(x)</code></td>
+<td>二维矩阵转置</td>
+</tr>
+<tr>
+<td><code>x.transpose(a, b)</code>、<code>torch.transpose(x, a, b)</code></td>
+<td>交换指定的两个维度</td>
+</tr>
+<tr>
+<td><code>x.permute(1, 2, 0)</code></td>
+<td>按指定顺序重排全部维度；新轴依次来自旧轴 1、2、0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>这些操作通常共享原数据，只改变形状和访问方式。</li>
+</ul>
+<h4 id="33-reshape">3.3 连续性与 Reshape</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x.contiguous()</code></td>
+<td>得到连续布局；已连续时返回自身，否则复制</td>
+</tr>
+<tr>
+<td><code>x.reshape(M, N)</code></td>
+<td>改变形状；能共享数据时返回 view，否则复制</td>
+</tr>
+<tr>
+<td><code>x.transpose(a, b).contiguous().view(...)</code></td>
+<td>交换轴后，先整理连续布局，再改变形状</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>view</code> 要求形状与底层步长兼容；转置后的非连续 Tensor 常无法直接 <code>view</code>。<code>reshape</code> 会在必要时复制，<strong>但并非总是深拷贝</strong>。</li>
+</ul>
+<h3 id="4-tensor-operations">4. Tensor Operations</h3>
+<h4 id="41">4.1 逐元素运算</h4>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>等价写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加法</td>
+<td><code>x + y</code>、<code>torch.add(x, y)</code>、<code>x.add(y)</code></td>
+</tr>
+<tr>
+<td>减法</td>
+<td><code>x - y</code>、<code>torch.sub(x, y)</code>、<code>x.sub(y)</code></td>
+</tr>
+<tr>
+<td>乘法</td>
+<td><code>x * y</code>、<code>torch.mul(x, y)</code>、<code>x.mul(y)</code></td>
+</tr>
+<tr>
+<td>除法</td>
+<td><code>x / y</code>、<code>torch.div(x, y)</code>、<code>x.div(y)</code></td>
+</tr>
+<tr>
+<td>幂</td>
+<td><code>x ** y</code>、<code>torch.pow(x, y)</code>、<code>x.pow(y)</code></td>
+</tr>
+<tr>
+<td>平方根</td>
+<td><code>torch.sqrt(x)</code>、<code>x.sqrt()</code></td>
+</tr>
+<tr>
+<td>三角函数</td>
+<td><code>torch.sin(x)</code>／<code>x.sin()</code>、<code>torch.cos(x)</code>／<code>x.cos()</code></td>
+</tr>
+<tr>
+<td>绝对值</td>
+<td><code>torch.abs(x)</code>、<code>x.abs()</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>*</code> 是逐元素乘法；矩阵乘法要使用 <code>@</code> 或相应函数。</li>
+</ul>
+<h4 id="42">4.2 归约运算</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x.sum()</code>、<code>torch.sum(x)</code></td>
+<td>全部元素求和，返回标量 Tensor</td>
+</tr>
+<tr>
+<td><code>x.sum(dim=d)</code></td>
+<td>沿第 <code>d</code> 维求和，默认删除该维度</td>
+</tr>
+<tr>
+<td><code>x.mean(dim=d)</code></td>
+<td>沿指定维度求均值，输入需为浮点或复数</td>
+</tr>
+<tr>
+<td><code>x.min()</code>、<code>x.max()</code></td>
+<td>全局最小／最大值</td>
+</tr>
+<tr>
+<td><code>values, indices = x.min(dim=d)</code></td>
+<td>返回该维最小值及其在该维的下标；<code>max</code> 同理</td>
+</tr>
+<tr>
+<td><code>x.argmin(dim=d)</code></td>
+<td>只返回最小值下标；并列时返回第一个</td>
+</tr>
+<tr>
+<td><code>x.sum(dim=d, keepdim=True)</code></td>
+<td>保留该维度，大小变为 1；其他归约函数也可用</td>
+</tr>
+<tr>
+<td><code>x.all()</code></td>
+<td>所有布尔元素是否都为真</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>对 <code>(M, N)</code>：<code>dim=0</code> 消去行轴，得到每列结果 <code>(N,)</code>；<code>dim=1</code> 消去列轴，得到每行结果 <code>(M,)</code>。</li>
+</ul>
+<h4 id="43">4.3 向量与矩阵运算</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>输入／输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>torch.dot(v, w)</code></td>
+<td><code>(N,)</code> 与 <code>(N,)</code> → 标量内积</td>
+</tr>
+<tr>
+<td><code>torch.mm(x, y)</code></td>
+<td><code>(N, M)</code> 与 <code>(M, P)</code> → <code>(N, P)</code>，不广播</td>
+</tr>
+<tr>
+<td><code>torch.mv(x, v)</code></td>
+<td><code>(N, M)</code> 与 <code>(M,)</code> → <code>(N,)</code></td>
+</tr>
+<tr>
+<td><code>torch.addmm(b, x, y, beta=1, alpha=1)</code></td>
+<td><code>beta * b + alpha * (x @ y)</code></td>
+</tr>
+<tr>
+<td><code>torch.addmv(b, x, v, beta=1, alpha=1)</code></td>
+<td><code>beta * b + alpha * (x @ v)</code></td>
+</tr>
+<tr>
+<td><code>torch.bmm(x, y)</code></td>
+<td><code>(B, N, M)</code> 与 <code>(B, M, P)</code> → <code>(B, N, P)</code>，batch 数须相同，不广播</td>
+</tr>
+<tr>
+<td><code>torch.baddbmm(b, x, y, beta=1, alpha=1)</code></td>
+<td><code>beta * b + alpha * bmm(x, y)</code></td>
+</tr>
+<tr>
+<td><code>torch.matmul(x, y)</code>、<code>x @ y</code></td>
+<td>通用乘法；按维度处理向量／矩阵，高维输入可广播 batch 维</td>
+</tr>
+<tr>
+<td><code>torch.stack(tensors, dim=0)</code></td>
+<td>同形状张量沿新维度堆叠</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-broadcasting">5. Broadcasting</h3>
+<h4 id="51">5.1 广播规则</h4>
+<p>从末尾对齐两个张量的各维度，如果两张量维数不同，则对维数较小的张量往左边补一个大小为 1 的维度。重复此操作，直到两个张量维数一致，并且各维度的大小须相等或其中一个为 1。大小为 1 的维度可通过 copy 扩展到另一张量对应维度的大小（一种假设，并没有实际复制数据）。</p>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x + v</code>，<code>x: (M, N)</code>、<code>v: (N,)</code></td>
+<td>给每行加同一个向量</td>
+</tr>
+<tr>
+<td><code>x + w.view(-1, 1)</code>，<code>w: (M,)</code></td>
+<td>给每列加同一个列向量</td>
+</tr>
+<tr>
+<td><code>v.view(-1, 1) * w</code>，<code>v: (N,)</code>、<code>w: (M,)</code></td>
+<td>生成外积 <code>(N, M)</code></td>
+</tr>
+<tr>
+<td><code>c.view(-1, 1, 1) * x</code>，<code>c: (B,)</code>、<code>x: (M, N)</code></td>
+<td>用不同常数缩放同一矩阵，输出 <code>(B, M, N)</code></td>
+</tr>
+<tr>
+<td><code>v.repeat((M, 1))</code></td>
+<td>实际复制数据，得到多行；区别于广播</td>
+</tr>
+<tr>
+<td><code>torch.broadcast_tensors(x, v)</code></td>
+<td>返回可共同广播的视图；可能有多个位置共享同一元素，避免原地写入</td>
+</tr>
+</tbody>
+</table>
+<h4 id="52">5.2 原地操作</h4>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>z = x.add(y)</code>、<code>z = x + y</code></td>
+<td>新结果，输入不变</td>
+</tr>
+<tr>
+<td><code>x.add_(y)</code>、<code>x += y</code></td>
+<td>修改 <code>x</code></td>
+</tr>
+<tr>
+<td><code>torch.add(x, y, out=x)</code></td>
+<td>把结果写入 <code>x</code></td>
+</tr>
+<tr>
+<td><code>z is x</code></td>
+<td>判断是否是同一 Python 对象，不是比较数值</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>方法名末尾的 <code>_</code> 通常表示原地操作；<code>out=</code> 可将结果写入指定位置。</li>
+</ul>
+<p>👉 原地修改在深度学习中可能会影响后续的梯度计算，因此我们最好使用能产生新结果的函数。</p>
+<h3 id="6-running-on-gpu">6. Running on GPU</h3>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>torch.cuda.is_available()</code></td>
+<td>检查 CUDA 是否可用</td>
+</tr>
+<tr>
+<td><code>x.device</code>、<code>torch.device('cpu')</code></td>
+<td>查看／表示设备</td>
+</tr>
+<tr>
+<td><code>x.to('cuda')</code>、<code>x.cuda()</code></td>
+<td>返回 GPU 上的张量</td>
+</tr>
+<tr>
+<td><code>x.to('cpu')</code>、<code>x.cpu()</code></td>
+<td>返回 CPU 上的张量</td>
+</tr>
+<tr>
+<td><code>torch.tensor(data, device='cuda', dtype=...)</code></td>
+<td>创建时指定设备和类型；其他构造函数也可用</td>
+</tr>
+<tr>
+<td><code>x.to(other)</code></td>
+<td>同时匹配另一个张量的设备与类型</td>
+</tr>
+<tr>
+<td><code>torch.cuda.synchronize()</code></td>
+<td>等待 GPU 操作完成，计时前后需要同步</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>GPU 运算通常要求参与运算的 Tensor 在同一设备，而新建 Tensor 默认在 CPU，需要指定设备或跨设备搬运数据（开销较大）。</li>
+</ul>
+<h3 id="7-challenge">7. Challenge</h3>
+<h4 id="71">7.1 各不等长张量的均值</h4>
+<p><strong>语法</strong></p>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>torch.cat(xs, dim=0)</code></td>
+<td>沿已有维度拼接，得到一维长向量；不同于 <code>stack</code> 新增维度</td>
+</tr>
+<tr>
+<td><code>torch.repeat_interleave(ids, ls, dim=0)</code></td>
+<td>将 <code>ids[i]</code> 连续重复 <code>ls[i]</code> 次</td>
+</tr>
+<tr>
+<td><code>base.scatter_add(d, idx, src)</code></td>
+<td>将 <code>src[j]</code> 的元素逐个加到<code>base</code>，累加位置由<code>idx</code>的值和<code>src</code>的索引共同决定。累加位置在<code>dim=d</code>维度，取<code>idx[src的索引]</code>的值；在<code>dim≠d</code>的维度取src在<code>dim≠d</code>的对应索引</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实现逻辑</strong></p>
+<ol>
+<li><code>tmp = cat(xs)</code>：把各张量首尾拼接。</li>
+<li>用 <code>arange(N)</code> 生成组号，再通过<code>torch.repeat_interleave()</code>按长度 <code>ls</code> 重复。例如： <code>ls=[3, 2]</code> 得到 <code>idx=[0, 0, 0, 1, 1]</code>。</li>
+<li>在长度为 <code>N</code> 的全 0 张量中，通过<code>scatter_add</code> 将<code>tmp</code>按组号累加，得到每组总和。</li>
+<li>逐元素除以 <code>ls</code>，得到形状 <code>(N,)</code> 的均值。</li>
+</ol>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">challenge_mean_tensors</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">tmp</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">idx</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">repeat_interleave</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span><span class="n">device</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">device</span><span class="p">),</span><span class="n">ls</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">y</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span><span class="n">device</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">device</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">scatter_add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">idx</span><span class="p">,</span><span class="n">tmp</span><span class="p">)</span> <span class="o">/</span> <span class="n">ls</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="72">7.2 不同数值及首次出现位置</h4>
+<p><strong>语法</strong></p>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>values, indices = x.sort(stable=True)</code></td>
+<td>排序并返回原始下标；稳定排序保留相等元素的原有顺序</td>
+</tr>
+<tr>
+<td><code>values[1:] != values[:-1]</code></td>
+<td>比较相邻元素，标记数值发生变化的位置</td>
+</tr>
+<tr>
+<td><code>torch.cat([first, mask])</code></td>
+<td>给相邻比较结果补上首元素的标记</td>
+</tr>
+<tr>
+<td><code>values[mask]</code>、<code>indices[mask]</code></td>
+<td>用同一掩码选择数值及对应原始下标</td>
+</tr>
+<tr>
+<td><code>torch.unique(x)</code></td>
+<td>获取不同数值；本题允许使用，但只给半分</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实现逻辑</strong></p>
+<ol>
+<li>稳定排序，使相等数值相邻；同值中原始下标最小者排在最前。</li>
+<li>比较相邻数值，在掩码头部补 <code>True</code>，保留每段的第一个元素。</li>
+<li>同步筛选排序值和原始下标，得到升序 <code>uniques</code> 及首次出现位置 <code>indices</code>。</li>
+</ol>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">challenge_get_uniques</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">value</span><span class="p">,</span><span class="n">idx</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">stable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">mask</span><span class="o">=</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">!=</span><span class="n">value</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">mask</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="kc">True</span><span class="p">],</span><span class="n">device</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">device</span><span class="p">),</span><span class="n">mask</span><span class="p">])</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">uniques</span><span class="o">=</span><span class="n">value</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">indices</span><span class="o">=</span><span class="n">idx</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="knn">kNN 分类器</h2>
+<div class="language-text highlight"><span class="filename">伪代码</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Input:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    X_train: Training samples (N × D)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    y_train: Training labels (N)
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    X_test:  Test samples (M × D)
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Output:
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    y_pred: Predicted labels (M)
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Training:
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    Store X_train and y_train
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Prediction:
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    Initialize y_pred
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    for i = 1 to M do
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        for j = 1 to N do
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            dist[j] ← Σ(k=1 to D) |X_train[j,k] - X_test[i,k]|
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        end for
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        min_index ← argmin(dist)
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        y_pred[i] ← y_train[min_index]
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    end for
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    return y_pred
+</span></code></pre></div>
+<h3 id="_1">距离计算函数</h3>
+<p>计算每个 test image 与每个 train image 之间的距离，返回一个二维张量。其中距离的计算方法是图片张量之间的<strong> 2 范数的平方</strong>。</p>
+<p><strong>函数接口</strong></p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">compute_distances</span><span class="p">(</span><span class="n">x_train</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">x_test</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="sd">    Computes the squared Euclidean distance between each element of training</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="sd">    set and each element of test set. Images should be flattened and treated</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="sd">    as vectors.</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="sd">    Args:</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="sd">        x_train: Tensor of shape (num_train, C, H, W)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="sd">        x_test: Tensor of shape (num_test, C, H, W)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="sd">    Returns:</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="sd">        dists: Tensor of shape (num_train, num_test) where dists[i, j] is</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="sd">            the squared Euclidean distance between the i-th training point and</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="sd">            the j-th test point.</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="c1"># Initialize dists to be a tensor of shape (num_train, num_test) with the</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="c1"># same datatype and device as x_train</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a>    <span class="n">num_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a>    <span class="n">num_test</span> <span class="o">=</span> <span class="n">x_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a>    <span class="n">dists</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">new_zeros</span><span class="p">(</span><span class="n">num_train</span><span class="p">,</span> <span class="n">num_test</span><span class="p">)</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; implementation &quot;&quot;&quot;</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a>    <span class="k">return</span> <span class="n">dists</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="two-loops-implementation">two loops implementation</h4>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_train</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="n">train</span><span class="o">=</span><span class="n">x_train</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_test</span><span class="p">):</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="n">test</span><span class="o">=</span><span class="n">x_test</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="p">((</span><span class="n">train</span><span class="o">-</span><span class="n">test</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="one-loop-implementation">one loop implementation</h4>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_train</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="n">train</span><span class="o">=</span><span class="n">x_train</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="n">test_pack</span><span class="o">=</span><span class="n">x_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_test</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="p">((</span><span class="n">test_pack</span><span class="o">-</span><span class="n">train</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="no-loop-implementation">no loop implementation</h4>
+<p>一开始，我的想法是直接通过一次广播来实现向量化计算。</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">v1</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">train_pack</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_train</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#把两个数据集都扩充成三维，让形状匹配</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">test_pack</span> <span class="o">=</span> <span class="n">x_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_test</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">dists</span> <span class="o">=</span> <span class="p">((</span><span class="n">train_pack</span> <span class="o">-</span> <span class="n">test_pack</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#沿第二个维度计算欧氏距离的平方</span>
+</span></code></pre></div></td></tr></table></div>
+<p>然而，这段代码虽然正确性通过了，但 <code>no loop</code> 的计算时间相比 <code>one loop</code>竟然增长了。在<code>dist</code>的计算过程中，产生了巨大的<code>(num_train, num_test, D)</code>大小的三位张量，超出了题目的内存限制，内存压力过大导致性能下降。</p>
+<p>后来，我回归题目所给的提示，将距离公式展开：</p>
+<div class="arithmatex">\[ ( \mathbf{u} - \mathbf{v})^2 = \mathbf{u}^2 + \mathbf{v}^2 - 2 \mathbf{u}^{\top} \mathbf{v} \]</div>
+<p>通过两次<code>sum()</code>和一次<code>matrix multiplication</code>组合成最终结果。</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">v2</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">train</span><span class="o">=</span><span class="n">x_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_train</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">test</span><span class="o">=</span><span class="n">x_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_test</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">sum_train</span><span class="o">=</span><span class="p">(</span><span class="n">train</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_train</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># u^2</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">sum_test</span><span class="o">=</span><span class="p">(</span><span class="n">test</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">num_test</span><span class="p">)</span> <span class="c1"># v^2</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">dists</span><span class="o">=</span><span class="n">sum_train</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">torch</span><span class="o">.</span><span class="n">mm</span><span class="p">(</span><span class="n">train</span><span class="p">,</span><span class="n">test</span><span class="o">.</span><span class="n">t</span><span class="p">())</span><span class="o">+</span><span class="n">sum_test</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="_2">对比</h4>
+<p><img alt="test" src="../img/time_compute.webp" /></p>
+<p>可以看到，对比 python 循环，向量化大大提高了计算性能。</p>
+<h3 id="_3">预测函数</h3>
+<p>基于测试图与各训练图之间的距离，找到最近的 k 个邻居，投票选出一个类别（label），将它作为对测试图 label 的预测结果。</p>
+<p><strong>函数接口</strong></p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span>
+<span class="normal"><a href="#__codelineno-8-21">21</a></span>
+<span class="normal"><a href="#__codelineno-8-22">22</a></span>
+<span class="normal"><a href="#__codelineno-8-23">23</a></span>
+<span class="normal"><a href="#__codelineno-8-24">24</a></span>
+<span class="normal"><a href="#__codelineno-8-25">25</a></span>
+<span class="normal"><a href="#__codelineno-8-26">26</a></span>
+<span class="normal"><a href="#__codelineno-8-27">27</a></span>
+<span class="normal"><a href="#__codelineno-8-28">28</a></span>
+<span class="normal"><a href="#__codelineno-8-29">29</a></span>
+<span class="normal"><a href="#__codelineno-8-30">30</a></span>
+<span class="normal"><a href="#__codelineno-8-31">31</a></span>
+<span class="normal"><a href="#__codelineno-8-32">32</a></span>
+<span class="normal"><a href="#__codelineno-8-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">predict_labels</span><span class="p">(</span><span class="n">dists</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y_train</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="sd">    Given distances between all pairs of training and test samples, predict a</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="sd">    label for each test sample by taking a MAJORITY VOTE among its `k` nearest</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="sd">    neighbors in the training set.</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="sd">    In the event of a tie, this function SHOULD return the smallest label. For</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="sd">    example, if k=5 and the 5 nearest neighbors to a test example have labels</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="sd">    [1, 2, 1, 2, 3] then there is a tie between 1 and 2 (each have 2 votes),</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="sd">    so we should return 1 since it is the smallest label.</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="sd">    This function should not modify any of its inputs.</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="sd">    Args:</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="sd">        dists: Tensor of shape (num_train, num_test) where dists[i, j] is the</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="sd">            squared Euclidean distance between the i-th training point and the</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="sd">            j-th test point.</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="sd">        y_train: Tensor of shape (num_train,) giving labels for all training</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="sd">            samples. Each label is an integer in the range [0, num_classes - 1]</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="sd">        k: The number of nearest neighbors to use for classification.</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21"></a>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="sd">    Returns:</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="sd">        y_pred: int64 Tensor of shape (num_test,) giving predicted labels for</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="sd">            the test data, where y_pred[j] is the predicted label for the j-th</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="sd">            test example. Each label should be an integer in the range</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="sd">            [0, num_classes - 1].</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28"></a>    <span class="n">num_train</span><span class="p">,</span> <span class="n">num_test</span> <span class="o">=</span> <span class="n">dists</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29"></a>    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_test</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30"></a>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; implementation &quot;&quot;&quot;</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32"></a>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33"></a>    <span class="k">return</span> <span class="n">y_pred</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="v1">v1</h4>
+<p>一开始想的比较简单，想直接通过<code>torch.unique</code>获取 k 个邻居的 label 和各自出现的次数，保留次数最大的那个。</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">version 1</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">value</span><span class="p">,</span><span class="n">idx</span> <span class="o">=</span> <span class="n">dists</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">stable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#sort the distance matrix along each column(test image)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">unique</span><span class="p">,</span><span class="n">counts</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">value</span><span class="p">[:</span><span class="n">k</span><span class="p">,:],</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># return the unique and counts for k &quot;distance&quot;!</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="nb">max</span><span class="p">,</span><span class="n">max_idx</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># find the maximum counts of unique distances</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="n">y_pred</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">max_idx</span><span class="p">,</span><span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_test</span><span class="p">)]]</span>
+</span></code></pre></div></td></tr></table></div>
+<p>然而这里有个逻辑问题，我这里是对<strong>距离</strong>做了投票，真正要投票的是每个<code>train_image</code>对应的 <strong>label</strong> ！</p>
+<h4 id="v2">v2</h4>
+<p>基于 v1 ，我修正了 label 的投票逻辑，对 label 而不是 dist 进行计数。</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">version 2</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">value</span><span class="p">,</span><span class="n">idx</span><span class="o">=</span><span class="n">dists</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">stable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_test</span><span class="p">):</span> <span class="c1"># traverse each test image,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="n">label</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="n">idx</span><span class="p">[:</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">]]</span> <span class="c1"># get the label of first k train images</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># count the appearance of each unique label</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a>    <span class="n">max_idx</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span> <span class="c1"># get the index of the predicted label</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a>    <span class="n">y_pred</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">unique</span><span class="p">[</span><span class="n">max_idx</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+<p>为了理清逻辑，我使用了一个循环。</p>
+<h4 id="v3">v3</h4>
+<p>我尝试沿这一路径化简循环，希望将函数完全向量化以提高运行速度。</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">version 3</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">value</span><span class="p">,</span><span class="n">idx</span><span class="o">=</span><span class="n">dists</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">stable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">label</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">num_test</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">t</span><span class="p">()[</span><span class="n">idx</span><span class="p">[:</span><span class="n">k</span><span class="p">,</span> <span class="p">:]]</span> <span class="c1"># expand the label vector to (num_train,num_test) matrix</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># vote labels of each test image along dimension 0.</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="n">max_idx</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">y_pred</span> <span class="o">=</span> <span class="n">unique</span><span class="p">[</span><span class="n">max_idx</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_test</span><span class="p">)]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_test</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>然而我没有考虑到的是，在 pytorch 的语法中，<code>torch.unique()</code>按某一维度操作时，它实际上是<strong>把其它维度打包起来</strong>作比较。因此第 3 行的 <code>torch.unique</code> 实际比较的是<code>k</code>个长度为<code>num_test</code>的向量，而不是对每个<code>test image</code>单独比较它的<code>k</code>个 label。这就造成了整体的逻辑错误。</p>
+<p>另外，还有一个隐蔽的语法错误，在第 2 行中，我对形如<code>(num_train,num_test)</code>的二维矩阵索引时只给出第一个维度的索引，这会将原张量的 0 维扩展成 0 维索引矩阵的形状，同时保留原张量的 1 维。最后它会返回一个三维张量，多了一个大小为 <code>num test</code> 的维度，因此 <code>torch.unique()</code> 比较的其实是形状为 (num_test,num_test) 的向量，得到的<code>unique</code>也将是三维张量。最后通过<code>unique[]</code>引用时又只给出了前两个维度，保留了第三个维度，得到形如<code>(num_test,num_test)</code>的二维张量，而它无法被<code>reshape</code>成长度为<code>num_test</code>的向量，解释器会报错。</p>
+<p>报错信息如下：</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="ne">RuntimeError</span> <span class="n">shape</span> <span class="s1">&#39;[3]&#39;</span> <span class="ow">is</span> <span class="n">invalid</span> <span class="k">for</span> <span class="nb">input</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">9</span>
+</span></code></pre></div>
+<h4 id="v4">v4</h4>
+<p><code>unique()</code>的设计决定了沿上述路径实现向量化比较困难，于是我们换一种思路，用在 pytorch 练习中遇到过的<code>torch.scatter_add()</code>来模拟投票逻辑。</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">version 4</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">value</span><span class="p">,</span><span class="n">idx</span><span class="o">=</span><span class="n">dists</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">stable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">label</span><span class="o">=</span><span class="n">y_train</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">num_test</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">t</span><span class="p">()[</span><span class="n">idx</span><span class="p">[:</span><span class="n">k</span><span class="p">,:],</span><span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_test</span><span class="p">)]</span> <span class="c1"># index the label correctly</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">num_classes</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="c1">#计算label总数</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">count</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span><span class="n">num_test</span><span class="p">)</span> <span class="c1"># 创建“投票箱”</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">vote</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">num_test</span><span class="p">)</span> <span class="c1"># 每个test image所对应的k个邻居各有1票</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">.</span><span class="n">scatter_add_</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">label</span><span class="p">,</span><span class="n">vote</span><span class="p">)</span> <span class="c1"># 把vote中的所有选票按label确定的类别投到count中。赋值位置的0维度由label[vote_index0,vote_index1]决定，1维度取vote_index2，契合投票逻辑。</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="n">y_pred</span><span class="o">=</span><span class="n">count</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#找到count矩阵每列最大（投票最多）的0维索引，对应的就是要预测的label值。</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="knn_1">kNN 类</h3>
+<p>最重要的两个函数已经实现了，接下来需要实现完整的 kNN 类，实现距离计算、预测、准确率的计算等。</p>
+<h4 id="k">k 的选择</h4>
+<p>在 kNN 的内部还需实现对于超参数 k 的选择，这对于预测的准确度有一定的影响。这是对于不同 k 预测的可视化图像。</p>
+<table align="center" style="border: none;">
+  <tr>
+    <td align="center" style="border: none; padding: 0 5px;">
+      <img src="../img/pred_k1.webp" width="100%">
+      <br>
+      <span style="font-size: 12px; color: #666;"></span>
+    </td>
+    <td align="center" style="border: none; padding: 0 5px;">
+      <img src="../img/pred_k3.webp" width="100%">
+      <br>
+      <span style="font-size: 12px; color: #666;"></span>
+    </td>
+    <td align="center" style="border: none; padding: 0 5px;">
+      <img src="../img/pred_k5.webp" width="100%">
+      <br>
+      <span style="font-size: 12px; color: #666;"></span>
+    </td>
+  </tr>
+</table>
+
+<p>课程给出的方法是将训练集划分成多个 folds，一个fold作为选择 k 的验证集（也就是在选择k的过程中用来作为测试集的数据），其它作为训练集。</p>
+<p>整体函数逻辑比较简单，就是对于每个可供选择的 k 值，跑<code>num_folds</code>轮训练，每次都把其中一个 fold 作为验证集，其它作为训练集。</p>
+<p><strong>函数接口 1</strong></p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span>
+<span class="normal"><a href="#__codelineno-14-19">19</a></span>
+<span class="normal"><a href="#__codelineno-14-20">20</a></span>
+<span class="normal"><a href="#__codelineno-14-21">21</a></span>
+<span class="normal"><a href="#__codelineno-14-22">22</a></span>
+<span class="normal"><a href="#__codelineno-14-23">23</a></span>
+<span class="normal"><a href="#__codelineno-14-24">24</a></span>
+<span class="normal"><a href="#__codelineno-14-25">25</a></span>
+<span class="normal"><a href="#__codelineno-14-26">26</a></span>
+<span class="normal"><a href="#__codelineno-14-27">27</a></span>
+<span class="normal"><a href="#__codelineno-14-28">28</a></span>
+<span class="normal"><a href="#__codelineno-14-29">29</a></span>
+<span class="normal"><a href="#__codelineno-14-30">30</a></span>
+<span class="normal"><a href="#__codelineno-14-31">31</a></span>
+<span class="normal"><a href="#__codelineno-14-32">32</a></span>
+<span class="normal"><a href="#__codelineno-14-33">33</a></span>
+<span class="normal"><a href="#__codelineno-14-34">34</a></span>
+<span class="normal"><a href="#__codelineno-14-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">knn_cross_validate</span><span class="p">(</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>    <span class="n">x_train</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a>    <span class="n">y_train</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a>    <span class="n">num_folds</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>    <span class="n">k_choices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="p">):</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="sd">    Perform cross-validation for `KnnClassifier`.</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="sd">    Args:</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="sd">        x_train: Tensor of shape (num_train, C, H, W) giving all training data.</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="sd">        y_train: int64 Tensor of shape (num_train,) giving labels for training</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="sd">            data.</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="sd">        num_folds: Integer giving the number of folds to use.</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="sd">        k_choices: List of integers giving the values of k to try.</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="sd">    Returns:</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="sd">        k_to_accuracies: Dictionary mapping values of k to lists, where</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="sd">            k_to_accuracies[k][i] is the accuracy on the i-th fold of a</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="sd">            `KnnClassifier` that uses k nearest neighbors.</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22"></a>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23"></a>    <span class="c1"># First we divide the training data into num_folds equally-sized folds.</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24"></a>    <span class="n">x_train_folds</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25"></a>    <span class="n">y_train_folds</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26"></a>    <span class="n">x_train_folds</span><span class="o">=</span><span class="n">x_train</span><span class="o">.</span><span class="n">chunk</span><span class="p">(</span><span class="n">num_folds</span><span class="p">)</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27"></a>    <span class="n">y_train_folds</span><span class="o">=</span><span class="n">y_train</span><span class="o">.</span><span class="n">chunk</span><span class="p">(</span><span class="n">num_folds</span><span class="p">)</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28"></a>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29"></a>    <span class="c1"># A dictionary holding the accuracies for different values of k that we</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30"></a>    <span class="c1"># find when running cross-validation. After running cross-validation,</span>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31"></a>    <span class="c1"># k_to_accuracies[k] should be a list of length num_folds giving the</span>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32"></a>    <span class="c1"># different accuracies we found trying `KnnClassifier`s using k neighbors.</span>
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33"></a>    <span class="n">k_to_accuracies</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34"></a>
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35"></a>    <span class="k">return</span> <span class="n">k_to_accuracies</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>实现逻辑 1</strong></p>
+<p>两个循环即可，需要一些列表和字典的操作。</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_choices</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>    <span class="n">accuracy</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_folds</span><span class="p">):</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a>        <span class="n">x_folds</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">x_train_folds</span><span class="p">)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a>        <span class="n">y_folds</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">y_train_folds</span><span class="p">)</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a>        <span class="k">del</span> <span class="n">x_folds</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y_folds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a>        <span class="n">x_folds</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">x_folds</span><span class="p">)</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a>        <span class="n">y_folds</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">y_folds</span><span class="p">)</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a>        <span class="n">accuracy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">KnnClassifier</span><span class="p">(</span><span class="n">x_folds</span><span class="p">,</span><span class="n">y_folds</span><span class="p">)</span><span class="o">.</span><span class="n">check_accuracy</span><span class="p">(</span><span class="n">x_train_folds</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y_train_folds</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">k</span><span class="p">))</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a>    <span class="n">k_to_accuracies</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span><span class="n">accuracy</span><span class="p">})</span>
+</span></code></pre></div></td></tr></table></div>
+<p>然后通过计算每个 k 的一组准确率的均值，比较后找到准确率最高的 k。</p>
+<p><strong>函数接口 2</strong></p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span>
+<span class="normal"><a href="#__codelineno-16-13">13</a></span>
+<span class="normal"><a href="#__codelineno-16-14">14</a></span>
+<span class="normal"><a href="#__codelineno-16-15">15</a></span>
+<span class="normal"><a href="#__codelineno-16-16">16</a></span>
+<span class="normal"><a href="#__codelineno-16-17">17</a></span>
+<span class="normal"><a href="#__codelineno-16-18">18</a></span>
+<span class="normal"><a href="#__codelineno-16-19">19</a></span>
+<span class="normal"><a href="#__codelineno-16-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">knn_get_best_k</span><span class="p">(</span><span class="n">k_to_accuracies</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">]):</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="sd">    Select the best value for k, from the cross-validation result from</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="sd">    knn_cross_validate. If there are multiple k&#39;s available, then you SHOULD</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="sd">    choose the smallest k among all possible answer.</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="sd">    Args:</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="sd">        k_to_accuracies: Dictionary mapping values of k to lists, where</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="sd">            k_to_accuracies[k][i] is the accuracy on the i-th fold of a</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="sd">            `KnnClassifier` that uses k nearest neighbors.</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="sd">    Returns:</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="sd">        best_k: best (and smallest if there is a conflict) k value based on</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="sd">            the k_to_accuracies info.</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a>    <span class="n">best_k</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17"></a>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;implementation&quot;&quot;&quot;</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19"></a>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20"></a>    <span class="k">return</span> <span class="n">best_k</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>实现逻辑 2</strong></p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">accuracies</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">k_to_accuracies</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">mean</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k_to_accuracies</span><span class="p">)):</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a>    <span class="n">mean</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">accuracies</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">accuracies</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="n">idx</span><span class="o">=</span><span class="n">mean</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">mean</span><span class="p">))</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="n">best_k</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">k_to_accuracies</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">idx</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="_4">整体框架</h4>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span>
+<span class="normal"><a href="#__codelineno-18-16">16</a></span>
+<span class="normal"><a href="#__codelineno-18-17">17</a></span>
+<span class="normal"><a href="#__codelineno-18-18">18</a></span>
+<span class="normal"><a href="#__codelineno-18-19">19</a></span>
+<span class="normal"><a href="#__codelineno-18-20">20</a></span>
+<span class="normal"><a href="#__codelineno-18-21">21</a></span>
+<span class="normal"><a href="#__codelineno-18-22">22</a></span>
+<span class="normal"><a href="#__codelineno-18-23">23</a></span>
+<span class="normal"><a href="#__codelineno-18-24">24</a></span>
+<span class="normal"><a href="#__codelineno-18-25">25</a></span>
+<span class="normal"><a href="#__codelineno-18-26">26</a></span>
+<span class="normal"><a href="#__codelineno-18-27">27</a></span>
+<span class="normal"><a href="#__codelineno-18-28">28</a></span>
+<span class="normal"><a href="#__codelineno-18-29">29</a></span>
+<span class="normal"><a href="#__codelineno-18-30">30</a></span>
+<span class="normal"><a href="#__codelineno-18-31">31</a></span>
+<span class="normal"><a href="#__codelineno-18-32">32</a></span>
+<span class="normal"><a href="#__codelineno-18-33">33</a></span>
+<span class="normal"><a href="#__codelineno-18-34">34</a></span>
+<span class="normal"><a href="#__codelineno-18-35">35</a></span>
+<span class="normal"><a href="#__codelineno-18-36">36</a></span>
+<span class="normal"><a href="#__codelineno-18-37">37</a></span>
+<span class="normal"><a href="#__codelineno-18-38">38</a></span>
+<span class="normal"><a href="#__codelineno-18-39">39</a></span>
+<span class="normal"><a href="#__codelineno-18-40">40</a></span>
+<span class="normal"><a href="#__codelineno-18-41">41</a></span>
+<span class="normal"><a href="#__codelineno-18-42">42</a></span>
+<span class="normal"><a href="#__codelineno-18-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">KnnClassifier</span><span class="p">:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_train</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y_train</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x_train</span> <span class="o">=</span> <span class="n">x_train</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_test</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7"></a>        <span class="n">dists</span> <span class="o">=</span> <span class="n">compute_distances_no_loops</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">)</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a>        <span class="k">return</span> <span class="n">predict_labels</span><span class="p">(</span><span class="n">dists</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">check_accuracy</span><span class="p">(</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a>        <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12"></a>        <span class="n">x_test</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13"></a>        <span class="n">y_test</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14"></a>        <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15"></a>        <span class="n">quiet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16"></a>    <span class="p">):</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17"></a>        <span class="n">y_test_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18"></a>        <span class="n">num_samples</span> <span class="o">=</span> <span class="n">x_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19"></a>        <span class="n">num_correct</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_test</span> <span class="o">==</span> <span class="n">y_test_pred</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20"></a>        <span class="n">accuracy</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">num_correct</span> <span class="o">/</span> <span class="n">num_samples</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21"></a>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23"></a>            <span class="nb">print</span><span class="p">(</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24"></a>                <span class="sa">f</span><span class="s2">&quot;Got </span><span class="si">{</span><span class="n">num_correct</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">num_samples</span><span class="si">}</span><span class="s2"> correct; &quot;</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25"></a>                <span class="sa">f</span><span class="s2">&quot;accuracy is </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26"></a>            <span class="p">)</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27"></a>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28"></a>        <span class="k">return</span> <span class="n">accuracy</span>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29"></a>
+</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30"></a>
+</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31"></a><span class="k">def</span><span class="w"> </span><span class="nf">knn_cross_validate</span><span class="p">(</span>
+</span><span id="__span-18-32"><a id="__codelineno-18-32" name="__codelineno-18-32"></a>    <span class="n">x_train</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+</span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33"></a>    <span class="n">y_train</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+</span><span id="__span-18-34"><a id="__codelineno-18-34" name="__codelineno-18-34"></a>    <span class="n">num_folds</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+</span><span id="__span-18-35"><a id="__codelineno-18-35" name="__codelineno-18-35"></a>    <span class="n">k_choices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+</span><span id="__span-18-36"><a id="__codelineno-18-36" name="__codelineno-18-36"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">]:</span>
+</span><span id="__span-18-37"><a id="__codelineno-18-37" name="__codelineno-18-37"></a>    <span class="o">...</span>
+</span><span id="__span-18-38"><a id="__codelineno-18-38" name="__codelineno-18-38"></a>
+</span><span id="__span-18-39"><a id="__codelineno-18-39" name="__codelineno-18-39"></a>
+</span><span id="__span-18-40"><a id="__codelineno-18-40" name="__codelineno-18-40"></a><span class="k">def</span><span class="w"> </span><span class="nf">knn_get_best_k</span><span class="p">(</span>
+</span><span id="__span-18-41"><a id="__codelineno-18-41" name="__codelineno-18-41"></a>    <span class="n">k_to_accuracies</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">]</span>
+</span><span id="__span-18-42"><a id="__codelineno-18-42" name="__codelineno-18-42"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-18-43"><a id="__codelineno-18-43" name="__codelineno-18-43"></a>    <span class="o">...</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="_5">最终评测</h3>
+<p>首先先跑一下<code>knn_cross_validate</code>和<code>knn_get_best_k</code>这两个函数，选出<code>best_k</code></p>
+<p>然后，使用这个<code>k</code>在完整的 <strong>CIFAR-10</strong> 数据集上进行训练，并评估 kNN 算法的准确度。</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span>
+<span class="normal"><a href="#__codelineno-19-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">knn</span><span class="w"> </span><span class="kn">import</span> <span class="n">KnnClassifier</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="n">x_train_all</span><span class="p">,</span> <span class="n">y_train_all</span><span class="p">,</span> <span class="n">x_test_all</span><span class="p">,</span> <span class="n">y_test_all</span> <span class="o">=</span> <span class="n">eecs598</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">cifar10</span><span class="p">()</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="n">classifier</span> <span class="o">=</span> <span class="n">KnnClassifier</span><span class="p">(</span><span class="n">x_train_all</span><span class="p">,</span> <span class="n">y_train_all</span><span class="p">)</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="n">classifier</span><span class="o">.</span><span class="n">check_accuracy</span><span class="p">(</span><span class="n">x_test_all</span><span class="p">,</span> <span class="n">y_test_all</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">best_k</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>得到最终结果：</p>
+<p><img alt="最终评测" src="../img/a1_finaltest.webp" /></p>
+<p>结果准确率为 33.86% ，其主要受到 knn 算法自身的限制，之后我们会学习精度更高也更复杂的算法。</p>
 
 
 
