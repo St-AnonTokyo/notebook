@@ -2,7 +2,7 @@
 
 密歇根大学开设的计算机视觉入门课程。
 
-这里记录了我做 assignment 的过程。
+这里记录的是我做 assignment 的笔记。
 
 --- 
 
@@ -12,7 +12,7 @@
 
 >👉教材：[https://www.deeplearningbook.org/](https://www.deeplearningbook.org/)
 
->👉 pytorch语法汇总：[https://docs.pytorch.org/docs/2.14/torch.html](https://docs.pytorch.org/docs/2.14/torch.html)
+>👉 pytorch接口表：[https://docs.pytorch.org/docs/2.14/torch.html](https://docs.pytorch.org/docs/2.14/torch.html)
 
 >👉Frankly6的笔记:[https://frankly6.cn/2025/03/27/EECS498-notes/](https://frankly6.cn/2025/03/27/EECS498-notes/)
 
