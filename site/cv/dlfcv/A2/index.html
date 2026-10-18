@@ -1976,7 +1976,7 @@
 <div class="arithmatex">\[ L(W) = \frac{1}{N} \Sigma_i L_i(x_i,y_i,W) + \lambda R(W) \]</div>
 <p>然后，通过求损失函数对权重矩阵的偏导来计算梯度 <span class="arithmatex">\(\nabla W\)</span>。</p>
 <div class="arithmatex">\[ \nabla_W L(W) = \frac{1}{N} \Sigma_i \nabla_W L_i(x_i,y_i,W) + \lambda \nabla R(W) \]</div>
-<p>这里<span class="arithmatex">\(R(W)\)</span> 取 <span class="arithmatex">\(\Sigma_i \Sigma_j W_{i,j}^2\)</span>，即矩阵 <span class="arithmatex">\(W\)</span> 的 <span class="arithmatex">\(F\)</span> 范数。</p>
+<p>这里<span class="arithmatex">\(R(W)\)</span> 取 <span class="arithmatex">\(\Sigma_i \Sigma_j W_{i,j}^2\)</span>，即矩阵 <span class="arithmatex">\(W\)</span> 的 <span class="arithmatex">\(F\)</span> 范数的平方。</p>
 <p>最后，在每一轮的优化步骤中，我们采用简单的随机梯度下降(Stochastic Gradient Descent)(SGD)。</p>
 <div class="arithmatex">\[ W_{t+1} = W_{t} - \alpha \nabla_W \]</div>
 <p>其中 <span class="arithmatex">\(\alpha\)</span> 是学习率。</p>
@@ -2128,7 +2128,7 @@
 </span></span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">index1</span><span class="o">+=</span><span class="n">row</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">index2</span><span class="o">+=</span><span class="n">y</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="hll"><span class="n">dW</span><span class="o">.</span><span class="n">scatter_add_</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">index1</span><span class="p">,</span><span class="n">X</span><span class="p">[</span><span class="n">column</span><span class="p">,:]</span><span class="o">.</span><span class="n">t</span><span class="p">())</span>
-</span></span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="hll"><span class="n">dW</span><span class="o">.</span><span class="n">scatter_add_</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">index2</span><span class="p">,</span><span class="n">count</span><span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="n">num_train</span><span class="p">),:]</span><span class="o">.</span><span class="n">t</span><span class="p">())</span>
+</span></span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="hll"><span class="n">dW</span><span class="o">.</span><span class="n">scatter_add_</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">index2</span><span class="p">,</span><span class="o">-</span><span class="n">count</span><span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="n">num_train</span><span class="p">),:]</span><span class="o">.</span><span class="n">t</span><span class="p">())</span>
 </span></span></code></pre></div></td></tr></table></div>
 <p>它的逻辑和<code>v0</code>语法错误的部分是相同的，只是用<code>index</code>矩阵绕了一圈，换成一种合法的实现。</p>
 <p>这种实现通过了正确性测试，但性能方面不是很好，相比循环版本只有约 <code>20X</code> 加速。这是由于我构建了两个很大的索引矩阵<code>index1/2</code>，并且在<code>scatter_add_</code>中多次拷贝大矩阵<code>X</code>的整行，又向<code>dW</code>中做了多次累加，开销较大。</p>
@@ -2293,7 +2293,6 @@
 <summary>关于超参数的选取</summary>
 <p>对于<code>learning_rates</code>和<code>regularization_strengths</code>要如何取值能够最大化准确率，并没有一个确定的规律。我们需要先设置一些可能的超参数，并通过<code>test_one_param_set</code>进行测试，找出最好的超参数。</p>
 <p>一种比较好的思路是，先尝试一些跨度较大的参数，确定最优参数的大概范围，然后逐步缩小参数间的跨度和范围，提高选取的精度。</p>
-<p>在实际的调参中，我发现参数在最优参数附近一定范围内（取决于参数种类），准确率是相同的。并且有时两个跨度比较大的参数，其训练准确率也很相近。</p>
 </details>
 <p><strong>最终结果</strong></p>
 <ul>
@@ -2312,8 +2311,9 @@
 </ul>
 <p>分类&amp;步求梯度：</p>
 <ul>
-<li>对 <span class="arithmatex">\(s_i\)</span>：<span class="arithmatex">\(\nabla_{s_i} L_i = \frac{e^{s_i} \times \nabla_W s_i}{\Sigma_j e^{s_j}}\)</span></li>
-<li>对 <span class="arithmatex">\(s_{y_i}\)</span>：<span class="arithmatex">\(\nabla_{s_{y_i}} L_i = -1 \times \nabla_W s_{y_i} +\frac{e^{s_{y_i}} \times \nabla_W s_{y_i}}{\Sigma_j e^{s_j}}\)</span></li>
+<li><span class="arithmatex">\(s_i\)</span> 对梯度的贡献：<span class="arithmatex">\(\frac{e^{s_i} \times \nabla_W s_i}{\Sigma_j e^{s_j}}\)</span></li>
+<li><span class="arithmatex">\(s_{y_i}\)</span> 对梯度的贡献：<span class="arithmatex">\(-1 \times \nabla_W s_{y_i} +\frac{e^{s_{y_i}} \times \nabla_W s_{y_i}}{\Sigma_j e^{s_j}}\)</span></li>
+<li><span class="arithmatex">\(\mathbf{d}W[j] = \nabla_{W} s_j = x\)</span></li>
 </ul>
 <p>分别累加到 <span class="arithmatex">\(\mathbf{d} W\)</span> 即可。</p>
 <p>👉 最终梯度还需除以训练图片数目，然后加上正则化项的梯度。</p>
@@ -2419,7 +2419,7 @@
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">regularization_strengths</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e-7</span><span class="p">]</span>
 </span></code></pre></div>
 <ul>
-<li>在测试集上的准确率：<code>40.01%</code></li>
+<li>在测试集上的准确率：40.01%</li>
 <li>权重矩阵可视化：
 <img alt="visualization" src="../img/softmax_visualization.webp" /></li>
 </ul>
