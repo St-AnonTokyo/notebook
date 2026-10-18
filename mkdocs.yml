@@ -36,11 +36,9 @@ nav:
     - Deep Learning for Computer Vision:
       - cv/dlfcv/index.md
       - Assignment 1: cv/dlfcv/A1.md
+      - Assignment 2: cv/dlfcv/A2.md
   - 人工智能:
     - ai/index.md
-    - 人工智能初步:
-      - ai/ai_start/index.md
-      - 人工智能：回顾、现状及展望: ai/ai_start/1.md
 
 extra:
   social:
